@@ -1,0 +1,926 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #262626;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 頭部樣式 */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 54px;
+    background-color: #fff;
+    z-index: -1;
+    
+}
+
+/* 左側 Logo 和導航列 */
+.main-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.main-header-left img {
+    height: 24px;
+    margin-right: 15px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.main-nav ul li a {
+    font-size: 14px;
+    padding: 0 5px;
+    color: #000;
+}
+
+.main-nav ul li a:hover {
+    color: #616161;
+}
+
+/* 右側功能區 */
+.main-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+
+.main-header-right button{
+    margin: 100px;
+}
+@media screen and (max-width: 859px) {
+    
+    .main-header-left{
+        position: relative;
+        width: 100%;
+        height: 54px;
+        overflow: visible; 
+    }
+    .main-header-left img {
+        position: absolute;
+        top: 30%;
+        left: 30vw;
+        display: flex;  
+        object-fit:cover;   
+        z-index: 10;
+    }
+    .main-header-right{
+        visibility: hidden;
+    }
+    .search i,.cart i,.login i{
+        visibility: visible;
+    }
+    .search i{
+        position: absolute;
+        top: 22px;
+        left: 54px;
+    }
+}
+.main-header-right span{
+    font-size: 13px;
+}
+
+.main-header-right .dropdown button,
+.main-header-right .search button,
+.main-header-right .cart button,
+.main-header-right .login button {
+    flex: none;
+    width: auto;
+}
+.main-header-right button {
+    flex: none; /* 讓按鈕不自動擴展 */
+    margin: 0 5px; /* 調整按鈕之間的距離 */
+}
+
+.main-header-right button:hover {
+    color: #616161;
+}
+
+.main-header-right i {
+    font-size: 16px;
+   
+}
+.search i{
+    transform: scaleX(-1);
+}
+
+/* 所有microsoft */
+.dropdown{
+    display: flex;
+    position: relative;
+    justify-content: end;
+    width: 100%;
+    
+}
+
+
+.dropdown label{
+    display: flex;
+    align-items: center;
+    width: 10px; */
+    height: 54px;
+    background-color: #fff;
+    position: relative;
+}
+
+
+.dropdown{
+    position: relative;
+    width: 100%;
+    max-width: none; /* 取消寬度限制 */
+    margin: 0 auto;
+}
+
+.sitemap-container {
+    position: absolute;
+    display: flex;
+    top: 38px; /* 放置在 dropdown 下方 */
+    left: 0;
+    right: 0;
+    background-color: #999; /* 背景色 */
+    padding: 0; /* 內邊距，讓內容有間隔 */
+    box-sizing: border-box; /* 包含內邊距和邊框 */
+    z-index: 10; /* 確保層級在前 */
+    overflow: hidden; /* 避免超出內容 */
+    max-height: 0; /* 初始隱藏 */
+    transform: translateY(-110px); /* 位移隱藏 */
+    width: 64vw; 
+    right: 0;
+}
+
+.sitemap-container .sitemap
+/* 當 checkbox 被選中時 */
+#side-menu-swich:checked ~ .sitemap-container {
+    max-height: 500px; /* 顯示內容時自動調整高度 */
+    transform: translateY(50PX); /* 回到初始位置 */
+    transform: translateX(-60%); /* 水平居中 */
+}
+
+.dropdown .sitemap {
+        display: flex;
+        flex-wrap: wrap; /* 支援多行排列 */
+        gap: 2px; /* 每個項目之間的間距 */
+        list-style: none; /* 移除列表點 */
+        padding: 0;
+        margin: 0;
+        top: 0px;
+        width: 100%; /* 撐滿父容器 */
+    }
+
+
+.dropdown .sitemap li {
+    flex: 1 1 AUTO; /* 每行顯示 4 個，根據需求調整 */
+    min-width: 50px; /* 防止項目過窄 */
+    margin-bottom: 10px; /* 底部間距 */
+}
+/* 所有microsoft */
+.dropdown .all-microsoft{
+    margin: 1px 0 0;
+    padding: 0 24px 0 15px;
+}
+.dropdown .search{
+   margin: 0 5px;
+}
+
+.dropdown.cart{
+    margin: 0 5px;
+}
+
+.dropdown.login {
+    margin: 0 5px;
+}
+
+.sitemap h3 {
+    font-size: 13px;
+    /* margin-bottom: 10px; */
+    color: #000;
+    
+}
+
+.sitemap a {
+    white-space: nowrap; /* 禁止換行 */
+    overflow: hidden;    /* 隱藏超出的部分 */
+    text-overflow: ellipsis; /* 顯示省略號 */
+    display: block;
+    font-size: 12PX;
+}
+
+.sitemap a:hover {
+    color: #0078d4;
+    text-decoration: underline;
+}
+
+.sitemap-footer {
+    text-align: center;
+}
+
+.sitemap-footer a {
+    font-size: 1em;
+    color: #0078d4;
+    text-decoration: none;
+}
+.search,.cart,.login{
+    display: flex;
+   flex: 1;
+}
+.search{
+    margin-right: 1rem;
+    
+}
+
+.sitemap-footer a:hover {
+    text-decoration: underline;
+}
+
+/* 初始隱藏下拉式選單 */
+.mobile-nav {
+    position: absolute;
+    top: 54px;
+    left: -110%;  /* 隱藏在左側 */
+    width: 100vw;
+    background-color: #f9f9f9f9;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+}
+
+/* 當點擊時顯示選單 */
+#menu-toggle-checkbox:checked ~ .mobile-nav {
+    left: 0;  /* 顯示選單 */
+}
+
+/* 下拉式選單菜單項目設置 */
+.mobile-nav ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.mobile-nav ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-nav ul li a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.mobile-nav ul li a:hover {
+    color: #0078d4;
+}
+
+/* 漢堡圖標設置 */
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+/* 初始狀態隱藏連結 */
+.links {
+    display: none;
+  }
+/* h3與箭頭的設置 */
+  .mobile-nav-list{
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 收合按鈕樣式 */
+  .mobile-nav.toggle-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 設置轉換動畫 */
+  }
+  
+ 
+  /* 收合的項目 */
+  .mobile-nav-links {
+    display: none;
+    flex-direction: column; /* 讓項目垂直排列 */
+    padding: 0 0 0 50px;
+  }
+  
+  .mobile-nav-links a {
+    margin-bottom: 10px; /* 每個 <a> 標籤之間加一些間距 */
+    text-decoration: none; /* 取消下劃線 */
+    }
+ /* 按鈕的箭頭翻轉 */
+ .toggle-btn.active i {
+    transform: scaleY(-1); /* 翻轉箭頭 */
+  }
+  .mobile-nav-links.active {
+    display: block; /* 切换时显示 */
+}
+/* 當視窗寬度小於等於 859px 顯示 */
+@media screen and (max-width: 859px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .main-nav {
+        display: none; /* 隱藏原本導航列 */
+    }
+}
+
+/* 當視窗寬度大於 859px 時顯示原始導航列 */
+@media screen and (min-width: 860px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* 輪播容器 */
+.carousel {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    margin: 50px auto;
+}
+
+/* 圖片容器 */
+.slides {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+/* 輪播圖片 */
+.slides img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+slides h2{
+    font-size: 37px;
+}
+    
+
+
+/* 控制按钮 */
+.carousel {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+}
+
+.slides {
+    display: flex;
+    width: 200%;  /* 两张图片 */
+    transition: transform 0.8s ease-in-out;
+}
+
+.slides img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 控制按钮样式 */
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* 指示點樣式 */
+.controls i {
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #666;
+}
+
+.controls i.fa-solid {
+    color: #007bff;  /* 选中时的颜色 */
+}
+
+.controls input[type="radio"] {
+    display: none;
+}
+
+/* Icon 列表容器 */
+.icon-list {
+    display: flex;
+    justify-content: center; /* 水平居中所有內容 */
+    align-items: center; /* 垂直居中所有內容 */
+    margin: 20px 0;
+    flex-wrap: 1 1 AUTO;
+}
+
+.icon-list ul {
+    display: flex;
+    list-style: none; /* 移除默認的列表樣式 */
+    gap: 30px; /* 列表項之間的間距 */
+    padding: 0;
+    margin: 0;
+}
+
+.icon-list li {
+    display: flex;
+    flex-direction: column; /* 垂直排列圖標和文字 */
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 文字居中對齊 */
+    gap: 10px; /* 圖標和文字之間的間距 */
+}
+
+/* 圖標樣式 */
+.icon-list img {
+    width: 40px; /* 圖標的寬度 */
+    height: 40px; /* 圖標的高度 */
+    object-fit: contain; /* 確保圖標保持比例 */
+}
+
+/* 文字樣式 */
+.icon-list a {
+    text-decoration: none; /* 移除下劃線 */
+    font-size: 14px; /* 文字大小 */
+    color: #0078d4; /* 超連結顏色 */
+}
+
+.icon-list a:hover {
+    text-decoration: underline; /* 懸停時增加下劃線 */
+}
+
+/* -----------------------MS購買 */
+
+/* 容器樣式 */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* 自動換行 */
+    justify-content: space-between; /* 卡片之間均勻分布 */
+    gap: 20px; /* 卡片之間的間距 */
+    padding: 20px;
+    width: 90%;
+}
+
+/* 卡片樣式 */
+.product-card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(25% - 20px); /* 四欄佈局，每欄占 25% 減去間距 */
+    min-width: 250px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* 圖片樣式 */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 卡片內容樣式 */
+.product-content {
+    padding: 0;
+    
+}
+
+.product-content h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.product-content p {
+    font-size: 14px;
+    color: #555;
+    
+}
+
+/* 按鈕樣式 */
+.product-action {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.product-action a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* 響應式設計 */
+@media screen and (max-width: 540px) {
+    .product-card {
+        flex: 1 1 calc(50% - 20px) ; /* 卡片佔兩分之一寬度 */
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-card {
+        flex: 1 1 100%; /* 卡片佔整行寬度 */
+    }
+}
+
+/* ----------------------Copilot  */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Copilot 區域 */
+.copilot-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* 控制文字卡片和圖片的間距 */
+    padding-right: .75rem;
+    padding-left: .75rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap; /* 支援響應式換行 */
+    background-color: #fff; /* 背景顏色 */
+}
+
+/* 文字卡片 */
+.copilot-text {
+    flex: 1; /* 占據剩餘空間 */
+    max-width: 50%; /* 最大寬度為容器的一半 */
+    min-width: 300px; /* 最小寬度 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 控制卡片內部元素的間距 */
+}
+
+.copilot-text h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #262626;
+}
+
+.copilot-text p {
+    font-size: 16px;
+    margin: 0;
+    color: #555;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d4;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 用於商務 */
+
+/* 圖片容器 */
+.image-container {
+    flex: 1; /* 占據剩餘空間 */
+    max-width: 50%; /* 最大寬度為容器的一半 */
+    min-width: 300px; /* 最小寬度 */
+    text-align: center; /* 圖片居中 */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* 圖片圓角效果 */
+    object-fit: cover;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 859px) {
+    .copilot-section {
+        flex-direction: column-reverse; /* 先顯示圖片（在上），後顯示文字卡片 */
+        text-align: center; /* 文字居中對齊 */
+    }
+
+    .image-container,
+    .copilot-text {
+        max-width: 100%; /* 佔滿整個寬度 */
+    }
+
+    .copilot-text {
+        margin-top: 20px; /* 讓文字卡片與圖片之間保持距離 */
+    }
+}
+
+/* ------------------SURFACE */
+
+
+
+/* -----適用於商務 */
+
+.business {
+    font-size: 29px;
+    padding: 0px 16px 0px 16px;
+    color: #000;
+}
+
+/* 容器樣式 */
+
+.business-container {
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 20px;
+  padding: 20px;
+  width: 90%;
+}
+
+/* 卡片樣式 */
+.business-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(25% - 20px); /* 四欄佈局，每欄占 25% 減去間距 */
+    min-width: 250px; 
+
+}
+
+/* 圖片樣式 */
+.business-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 卡片內容 */
+.card-content {
+   padding: 0;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+.business-action {
+  padding: 15px;
+    background-color: #fff;
+}
+.business-action a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 540px) {
+    .business-card {
+        flex: 1 1 calc(50% - 20px) ; /* 卡片佔兩分之一寬度 */
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .business-card {
+        flex: 1 1 100%; /* 卡片佔整行寬度 */
+    }
+}
+
+/* ----------------關注 */
+
+/* Footer 區域 */
+.footer {
+    padding: 20px;
+    background-color: #fff; 
+}
+
+/* 關注區域 */
+
+
+.follow {
+    display: flex;
+    margin-bottom: 20px; /* 與統編區域的間距 */
+    padding: 10PX;
+    width: 100%
+}
+
+.follow h2 {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 0 10px 0; /* 下方間距，靠左對齊 */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* 控制圖標之間的間距 */
+    list-style: none;
+    padding: 0 0 10PX 0;
+    margin: 10px;
+    
+}
+
+.social-icons li {
+    font-size: 20px; /* 圖標大小 */
+    color: #262626;
+    display: inline-block;
+}
+
+/* 統編區域 */
+.company-info {
+    margin-top: 10px;
+}
+
+.company-info span {
+    font-size: 14px;
+    color: #000; /* 與標題保持一致的顏色 */
+    display: block; /* 獨占一行 */
+}
+
+
+/* ------------底層瀏覽列 */
+
+/* Footer 區域 */
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 預設 6 欄 */
+    gap: 20px; /* 欄間距 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景顏色 */
+}
+
+.footer-column h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #616161;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #616161;
+    font-size: 11px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 1024px) {
+    .footer-nav {
+        grid-template-columns: repeat(3, 1fr); /* 中等螢幕 3 欄 */
+    }
+}
+
+@media screen and (max-width: 539px) {
+    .footer-nav {
+        grid-template-columns: 1fr; /* 小螢幕 1 欄 */
+    }
+}
+
+/* ----------最底層 */
+
+/* 底部區域 */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between; /* 左右對齊 */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9; /* 背景顏色 */
+    border-top: 1px solid #e6e6e6; /* 上邊框 */
+    font-size: 14px;
+    color: #616161;
+    flex-wrap: wrap; /* 支援響應式換行 */
+}
+
+/* 左側樣式 */
+.footer-bottom-left {
+    display: flex;
+    gap: 15px; /* 控制項目之間的間距 */
+    flex-wrap: wrap; /* 讓項目換行 */
+    margin-bottom: 10px;
+}
+
+.footer-bottom-left a {
+    text-decoration: none;
+    color: #0078d4;
+    font-size: 14px;
+}
+
+.footer-bottom-left a:hover {
+    text-decoration: underline;
+}
+
+/* 右側樣式 */
+.footer-bottom-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 靠右對齊 */
+    gap: 10px;
+}
+
+.footer-bottom-right ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-bottom-right ul li {
+    font-size: 14px;
+}
+
+.footer-bottom-right ul li a {
+    text-decoration: none;
+    color: #616161;
+}
+
+.footer-bottom-right ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom-right span {
+    color: #000;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column; /* 改為垂直排列 */
+        align-items: flex-start; /* 靠左對齊 */
+    }
+
+    .footer-bottom-left {
+        order: 1; /* 左側內容放在上面 */
+    }
+
+    .footer-bottom-right {
+        align-items: flex-start; /* 靠左對齊 */
+        order: 2; /* 右側內容放在下面 */
+    }
+}
