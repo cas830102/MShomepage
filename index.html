@@ -132,62 +132,67 @@
             <li><a href="#">Xbox</a></li>
             <li><a href="#">支援</a></li>
                         <li>
-                                <h3>軟體</h3>
-                                <a href="#">Windows 應用程式</a>
-                                <a href="#">AI</a>
-                                <a href="#">OneDrive</a>
-                                <a href="#">Outlook</a>
-                                <a href="#">Skype</a>
-                                <a href="#">OneNote</a>
-                                <a href="#">Microsoft Teams</a>
+                                <h3>軟體<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links">
+                                    <a href="#">Windows 應用程式</a>
+                                    <a href="#">AI</a>
+                                    <a href="#">OneDrive</a>
+                                    <a href="#">Outlook</a>
+                                    <a href="#">Skype</a>
+                                    <a href="#">OneNote</a>
+                                    <a href="#">Microsoft Teams</a>
+                                </div>
                             </li>
                             <li>
-                                <h3>個人電腦和設備</h3>
-                                <a href="#">電腦配件</a>
+                                <h3>個人電腦和設備<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links">
+                                    <a href="#">電腦配件</a>
+                                </div>
                             </li>
                             <li>
-                                <div class="mobile-nav-list">
-                                    <h3>娛樂</h3>
-                                    <button class="toggle-btn">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </button>
-                                    <div class="mobile-nav-links">
+                                <h3>娛樂<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links">
                                     <a href="#">Xbox Game Pass Ultimate</a>
                                     <a href="#">Xbox Live Gold</a>
                                     <a href="#">Xbox 與遊戲</a>
                                     <a href="#">電腦遊戲</a>
                                     <a href="#">Windows 遊戲</a>
                                 </div>
+                            </li>
+                            <li>
+                                <h3>商務適用<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links">
+                                    <a href="#">Microsoft Cloud</a>
+                                    <a href="#">Microsoft 安全性</a>
+                                    <a href="#">Azure</a>
+                                    <a href="#">Dynamics 365</a>
+                                    <a href="#">商務用 Microsoft 365</a>
+                                    <a href="#">Microsoft 產業</a>
+                                    <a href="#">Microsoft Power Platform</a>
+                                    <a href="#">Windows 365</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>商務適用</h3>
-                                <a href="#">Microsoft Cloud</a>
-                                <a href="#">Microsoft 安全性</a>
-                                <a href="#">Azure</a>
-                                <a href="#">Dynamics 365</a>
-                                <a href="#">商務用 Microsoft 365</a>
-                                <a href="#">Microsoft 產業</a>
-                                <a href="#">Microsoft Power Platform</a>
-                                <a href="#">Windows 365</a>
+                                <h3>開發人員與 IT<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links">
+                                    <a href="#">Microsoft 開發人員工具</a>
+                                    <a href="#">文件</a>
+                                    <a href="#">Microsoft Learn</a>
+                                    <a href="#">Microsoft 技術社群</a>
+                                    <a href="#">Azure Marketplace</a>
+                                    <a href="#">AppSource</a>
+                                    <a href="#">Visual Studio</a>
+                                </div>
                             </li>
                             <li>
-                                <h3>開發人員與 IT</h3>
-                                <a href="#">Microsoft 開發人員工具</a>
-                                <a href="#">文件</a>
-                                <a href="#">Microsoft Learn</a>
-                                <a href="#">Microsoft 技術社群</a>
-                                <a href="#">Azure Marketplace</a>
-                                <a href="#">AppSource</a>
-                                <a href="#">Visual Studio</a>
-                            </li>
-                            <li>
-                                <h3>其他</h3>
-                                <a href="#">Microsoft Rewards</a>
-                                <a href="#">免费下载與安全性</a>
-                                <a href="#">教育</a>
-                                <a href="#">禮品卡</a>
-                                <a href="#">Licensing</a>
+                                <h3>其他<i class="fa-solid fa-chevron-down"></i></h3>
+                                <div class="nav-links"> 
+                                    <a href="#">Microsoft Rewards</a>
+                                    <a href="#">免费下载與安全性</a>
+                                    <a href="#">教育</a>
+                                    <a href="#">禮品卡</a>
+                                    <a href="#">Licensing</a>
+                                </div>  
                             </li>
                             <div class="sitemap-footer">
                                 <a href="#">檢視網站地圖></a>
@@ -202,50 +207,39 @@
 
 <!-- 輪播圖片區 -->
 <div class="carousel">
-    <div class="slides">
+    <div class="carousel-container">
+        <div class="carousel-inner" id="carouselInner">
+            <div class="carousel-item">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP2-859x540" alt="圖片1">
+                <div class="content-wrapper">
+                    <div class="text-card">
+                        <h2>認識 Surface Pro</h2>
+                        <p>這台膝上型電腦擁有無與倫比的彈性和人工智慧功能，例如即時輔助字幕和 Cocreator，助您獲得更多選項。</p>
+                        <button class="cta-button">深入了解</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP2-859x540" alt="圖片2">
+                <div class="content-wrapper">
+                    <div class="text-card">
+                        <h2>驚奇不斷的收穫</h2>
+                        <p>Microsoft 365 在您喜愛的應用程式中提供雲端儲存空間、安全性及 Microsoft Copilot——購買一個方案，就可享有這一切。</p>
+                        <button class="cta-button">選購 Microsoft 365</button>
+                        
 
-        <div>
-            <h2>認識 Surface Pro</h2>
-                <p>
-                     這台膝上型電腦擁有無與倫比的彈性和人工智慧功能，例如即時輔助字幕和 Cocreator，
-                      助您獲得更多選項。
-                </p>
-            <a href="#">深入了解</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- <img src="./pic/Highlight-Surface-Laptop-AI-7Ed-Sapphire-MC001-3000x1682_VP2-859x540.png" alt="图片1"> -->
-            
-            
-        <h2>認識 Surface Laptop</h2>
-            <p>
-              使用這款功能強大的膝上型電腦，解鎖人工智慧功能，例如即時輔助字幕和 Cocreator。
-            </p>
-            <a href="#">深入了解</a>
-        <!-- <img src="./pic/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682_VP2-859x540.png" alt="图片2"> -->
-       
-            
-          
-  
+    </div>
+    <div class="carousel-controls">
+        <button class="pause-play-btn" id="pausePlayBtn">
+            <i class="fa-regular fa-circle-pause"></i>        <button class="control-btn" onclick="prevSlide()">＜</button>
+        <div class="nav-dots" id="navDots"></div>
+        <button class="control-btn" onclick="nextSlide()">＞</button>
     </div>
 </div>
-
-
-
-<div class="controls">
-    <label>
-        <input type="radio" name="play" id="pause">
-        <i class="fa-regular fa-circle-pause"></i>
-    </label>
-    <button class="prev" onclick="prevSlide()">❮</button>
-
-    <!-- 指示點：用於顯示圖片狀態 -->
-    <i class="fa-solid fa-circle" id="dot1"></i>  
-    <i class="fa-regular fa-circle" id="dot2"></i>  
-
-    <button class="next" onclick="nextSlide()">❯</button>
-
-
-</div>
-
   
 
 
@@ -274,49 +268,59 @@
   <div class="product-container">
     <!-- Xbox Series X -->
     <div class="product-card">
-        <img src="./pic/gldn-XSX-CP-Xbox-Series-X.png" alt="Xbox Series X">
-        <div class="product-content">
-            <h2>Xbox Series X</h2>
-            <p>有史以來最快、最強大的 Xbox。</p>
+        <div>
+            <img src="./pic/gldn-XSX-CP-Xbox-Series-X.png" alt="Xbox Series X">
+                <div class="product-content">
+                    <h2>Xbox Series X</h2>
+                    <p>有史以來最快、最強大的 Xbox。</p>
+                </div>
+                <div class="product-action">
+                    <a href="#">選購 Xbox Series X</a>
+                </div>
         </div>
-        <div class="product-action">
-            <a href="#">選購 Xbox Series X</a>
-        </div>
+            
     </div>
 
     <!-- Xbox Series S -->
     <div class="product-card">
-        <img src="./pic/gldn-XSS-CP-Xbox-Series-S-Evergreen.png" alt="Xbox Series S">
-        <div class="product-content">
-            <h2>Xbox Series S</h2>
-            <p>有史以來外型最小的 Xbox 所帶來的新一代效能。</p>
-        </div>
-        <div class="product-action">
-            <a href="#">選購 Xbox Series S</a>
+        <div>
+            <img src="./pic/gldn-XSS-CP-Xbox-Series-S-Evergreen.png" alt="Xbox Series S">
+            <div class="product-content">
+                <h2>Xbox Series S</h2>
+                <p>有史以來外型最小的 Xbox 所帶來的新一代效能。</p>
+            </div>
+            <div class="product-action">
+                <a href="#">選購 Xbox Series S</a>
+            </div>
         </div>
     </div>
 
     <!-- Game Pass -->
     <div class="product-card">
-        <img src="pic/Content-Card-Game-Pass-Update-September-2024.png" alt="Game Pass">
-        <div class="product-content">
-            <h2>Game Pass</h2>
-            <p>在首發日遊玩新遊戲。再加上在主機和電腦上與朋友一起享受數百款高品質遊戲。</p>
+        <div>
+            <img src="pic/Content-Card-Game-Pass-Update-September-2024.png" alt="Game Pass">
+            <div class="product-content">
+                <h2>Game Pass</h2>
+                <p>在首發日遊玩新遊戲。再加上在主機和電腦上與朋友一起享受數百款高品質遊戲。</p>
+            </div>
+            <div class="product-action">
+                <a href="#">立即加入</a>
+            </div>
         </div>
-        <div class="product-action">
-            <a href="#">立即加入</a>
-        </div>
+        
     </div>
 
     <!-- Microsoft 365 -->
     <div class="product-card">
-        <img src="./pic/Content-Card-Microsoft-365-Icon-Toss-Cycle-2.png" alt="Microsoft 365">
-        <div class="product-content">
-            <h2>驚奇不斷的收穫</h2>
-            <p>Microsoft 365 在您喜愛的應用程式中提供雲端儲存空間、安全性及 Microsoft Copilot——購買一個方案，就可享有這一切。</p>
-        </div>
-        <div class="product-action">
-            <a href="#">選購 Microsoft 365</a>
+        <div>
+            <img src="./pic/Content-Card-Microsoft-365-Icon-Toss-Cycle-2.png" alt="Microsoft 365">
+            <div class="product-content">
+                <h2>驚奇不斷的收穫</h2>
+                <p>Microsoft 365 在您喜愛的應用程式中提供雲端儲存空間、安全性及 Microsoft Copilot——購買一個方案，就可享有這一切。</p>
+            </div>
+            <div class="product-action">
+                <a href="#">選購 Microsoft 365</a>
+            </div>
         </div>
     </div>
 </div>
@@ -522,8 +526,13 @@
 </div>
 
 
-
+<!-- 回首頁 -->
+<a href="/" class="back-to-home" id="backToHome"><i class="fa-solid fa-arrow-up"></i>回首頁</a>
+<script src="./app.js"></script>    
+</body>
+</html>
 
 <script src="./app.js"></script>    
 </body>
 </html>
+

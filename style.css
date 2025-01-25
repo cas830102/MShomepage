@@ -56,6 +56,11 @@ button {
     font-size: 14px;
     padding: 0 5px;
     color: #000;
+    
+}
+.main-nav ul li a:hover{
+
+    border-bottom:2px #000 solid;
 }
 
 .main-nav ul li a:hover {
@@ -66,13 +71,35 @@ button {
 .main-header-right {
     display: flex;
     align-items: center;
-    justify-content: end;
-    
+    gap: 1rem; /* 增加間距 */
+}
+.main-header-right span:hover{
+    border-bottom:2px #000 solid;
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.header-nav a {
+    color: #262626;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-nav a:hover {
+    text-decoration: underline;
+}
+.header-nav .icon {
+    width: 24px;
+    height: 24px;
+}
+.microsoft-menu {
+    padding: 0 0.5rem;
 }
 
-.main-header-right button{
-    margin: 100px;
-}
 @media screen and (max-width: 859px) {
     
     .main-header-left{
@@ -113,8 +140,11 @@ button {
     width: auto;
 }
 .main-header-right button {
-    flex: none; /* 讓按鈕不自動擴展 */
-    margin: 0 5px; /* 調整按鈕之間的距離 */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    white-space: nowrap; /* 防止文字換行 */
 }
 
 .main-header-right button:hover {
@@ -123,6 +153,7 @@ button {
 
 .main-header-right i {
     font-size: 16px;
+    margin-left: 5px;
    
 }
 .search i{
@@ -142,92 +173,71 @@ button {
 .dropdown label{
     display: flex;
     align-items: center;
-    width: 10px; */
-    height: 54px;
+    height: 54;
     background-color: #fff;
+    color: #000;
     position: relative;
-}
+    margin: 11px;
 
+}
 
 .dropdown{
     position: relative;
-    width: 100%;
-    max-width: none; /* 取消寬度限制 */
-    margin: 0 auto;
+   
+}
+.dropdown label:hover,
+.dropdown:hover {
+ background-color: #f2f2f2;
+}
+
+#side-menu-swich:checked ~ label,
+#side-menu-swich:checked ~ .dropdown {
+ background-color: #f2f2f2;
 }
 
 .sitemap-container {
     position: absolute;
-    display: flex;
-    top: 38px; /* 放置在 dropdown 下方 */
-    left: 0;
-    right: 0;
-    background-color: #999; /* 背景色 */
-    padding: 0; /* 內邊距，讓內容有間隔 */
-    box-sizing: border-box; /* 包含內邊距和邊框 */
-    z-index: 10; /* 確保層級在前 */
-    overflow: hidden; /* 避免超出內容 */
-    max-height: 0; /* 初始隱藏 */
-    transform: translateY(-110px); /* 位移隱藏 */
-    width: 64vw; 
-    right: 0;
+    display: none; /* 改用 display 控制顯示 */
+    top: 38px; /* 配合 header 高度 */
+    left: 50%;
+    transform: translateX(-75%); /* 水平置中 */
+    width: 75vw;
+    max-width: 1200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    
 }
-
-.sitemap-container .sitemap
 /* 當 checkbox 被選中時 */
 #side-menu-swich:checked ~ .sitemap-container {
-    max-height: 500px; /* 顯示內容時自動調整高度 */
-    transform: translateY(50PX); /* 回到初始位置 */
-    transform: translateX(-60%); /* 水平居中 */
+    display: block;
 }
-
+/* 所有microsoftv下拉式選單 */
 .dropdown .sitemap {
-        display: flex;
-        flex-wrap: wrap; /* 支援多行排列 */
-        gap: 2px; /* 每個項目之間的間距 */
-        list-style: none; /* 移除列表點 */
-        padding: 0;
-        margin: 0;
-        top: 0px;
-        width: 100%; /* 撐滿父容器 */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6列等寬布局 */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
     }
 
 
 .dropdown .sitemap li {
-    flex: 1 1 AUTO; /* 每行顯示 4 個，根據需求調整 */
-    min-width: 50px; /* 防止項目過窄 */
-    margin-bottom: 10px; /* 底部間距 */
-}
-/* 所有microsoft */
-.dropdown .all-microsoft{
-    margin: 1px 0 0;
-    padding: 0 24px 0 15px;
-}
-.dropdown .search{
-   margin: 0 5px;
+    min-width: 160px;
 }
 
-.dropdown.cart{
-    margin: 0 5px;
-}
-
-.dropdown.login {
-    margin: 0 5px;
-}
 
 .sitemap h3 {
+    padding: 18px 0 18px 24px;
     font-size: 13px;
-    /* margin-bottom: 10px; */
-    color: #000;
-    
 }
 
 .sitemap a {
-    white-space: nowrap; /* 禁止換行 */
-    overflow: hidden;    /* 隱藏超出的部分 */
-    text-overflow: ellipsis; /* 顯示省略號 */
     display: block;
-    font-size: 12PX;
+    padding: 12px 0 12px 24px;
+    color: #000;
+    font-size: 12px;
 }
 
 .sitemap a:hover {
@@ -268,6 +278,7 @@ button {
     transition: left 0.3s ease-in-out;
     z-index: 999;
 }
+
 
 /* 當點擊時顯示選單 */
 #menu-toggle-checkbox:checked ~ .mobile-nav {
@@ -314,19 +325,64 @@ button {
     display: flex;
     justify-content: space-between;
   }
+  
   /* 收合按鈕樣式 */
   .mobile-nav.toggle-btn {
-    margin-left: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s ease; /* 設置轉換動畫 */
+    padding: 5px;
   }
+  .toggle-btn i {
+    transition: transform 0.3s;
+}
   
- 
+  .mobile-nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.mobile-nav h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+}
+.mobile-nav h3 i {
+    transition: transform 0.3s ease;
+}
+.mobile-nav h3.active i {
+    transform: rotate(180deg);
+}
+
+.nav-links {
+    display: none;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+}
+
+.nav-links.active {
+    display: block;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 0;
+    color: #262626;
+    text-decoration: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
   /* 收合的項目 */
   .mobile-nav-links {
-    display: none;
-    flex-direction: column; /* 讓項目垂直排列 */
-    padding: 0 0 0 50px;
+    display: flex;
+    padding-left: 20px;
+    flex-direction: column;
   }
   
   .mobile-nav-links a {
@@ -364,83 +420,165 @@ button {
 
 
 
+/* 輪播區 */
+body {
+    overflow-x: hidden;
+  }
+  
 
-/* 輪播容器 */
 .carousel {
-    position: relative;
     width: 100vw;
     overflow: hidden;
-    border: 2px solid #ccc;
-    margin: 50px auto;
+}
+.carousel-container {
+    width: 100%;
+    margin-bottom: 20px;
+  
 }
 
-/* 圖片容器 */
-.slides {
-    display: block;
-    unicode-bidi: isolate;
-}
-
-/* 輪播圖片 */
-.slides img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-slides h2{
-    font-size: 37px;
-}
-    
-
-
-/* 控制按钮 */
-.carousel {
-    position: relative;
-    width: 600px;
-    height: 400px;
-    overflow: hidden;
-    margin: 50px auto;
-    border: 2px solid #ccc;
-}
-
-.slides {
+.carousel-controls {
     display: flex;
-    width: 200%;  /* 两张图片 */
-    transition: transform 0.8s ease-in-out;
-}
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
 
-.slides img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 控制按钮样式 */
-.controls {
-    text-align: center;
-    margin-top: 20px;
-}
-
-button {
-    font-size: 24px;
-    cursor: pointer;
-    border: none;
+  .control-btn {
     background: none;
-}
-
-/* 指示點樣式 */
-.controls i {
+    border: none;
+    color: #000;
     font-size: 20px;
-    margin: 0 5px;
     cursor: pointer;
-    color: #666;
+    padding: 0 10px;
+}
+  .carousel-prev,
+.carousel-next {
+ background: none;
+ border: none;
+ color: #fff;
+ font-size: 24px;
+ cursor: pointer;
+ z-index: 2;
 }
 
-.controls i.fa-solid {
-    color: #007bff;  /* 选中时的颜色 */
+.carousel-next {
+ margin-left: 500px; /* 右邊按鈕向右偏移 */
 }
 
-.controls input[type="radio"] {
-    display: none;
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
 }
+.carousel-item {
+    min-width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+.content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+.text-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    max-width: 450px;
+    opacity: 1;
+    z-index: 1;
+}
+.carousel-item.active .text-card {
+    opacity: 1;
+    transform: translateX(0);
+   }
+
+.text-card h2 {
+    font-size: 2.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+.text-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+}
+.nav-dots {
+    display: flex;
+    gap: 8px;
+}
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+.nav-dot.active {
+    background-color: #000;
+}
+.pause-play-btn {
+    color: #000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 10px;
+}
+@media screen and (max-width: 768px) {
+    .text-card {
+        padding: 15px;
+        max-width: 90%;
+    }
+    
+    .text-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .text-card p {
+        font-size: 1rem;
+    }
+}
+
+
 
 /* Icon 列表容器 */
 .icon-list {
@@ -495,6 +633,7 @@ button {
     gap: 20px; /* 卡片之間的間距 */
     padding: 20px;
     width: 90%;
+    justify-content: space-between;
 }
 
 /* 卡片樣式 */
@@ -924,3 +1063,23 @@ a:hover {
         order: 2; /* 右側內容放在下面 */
     }
 }
+
+/* 回首頁 */
+
+.back-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    background-color: #272727;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-to-home.stop {
+    position: absolute;
+  }
