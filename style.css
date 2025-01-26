@@ -614,41 +614,36 @@ body {
 
 /* 文字樣式 */
 .icon-list a {
-    text-decoration: none; /* 移除下劃線 */
     font-size: 14px; /* 文字大小 */
     color: #0078d4; /* 超連結顏色 */
 }
 
-.icon-list a:hover {
-    text-decoration: underline; /* 懸停時增加下劃線 */
-}
+
 
 /* -----------------------MS購買 */
 
 /* 容器樣式 */
 .product-container {
-    display: flex;
-    flex-wrap: wrap; /* 自動換行 */
-    justify-content: space-between; /* 卡片之間均勻分布 */
-    gap: 20px; /* 卡片之間的間距 */
-    padding: 20px;
-    width: 90%;
-    justify-content: space-between;
+    display: grid;
+    gap: 24px;
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 1600px;
+
 }
 
 /* 卡片樣式 */
 .product-card {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     overflow: hidden;
-    width: calc(25% - 20px); /* 四欄佈局，每欄占 25% 減去間距 */
-    min-width: 250px; 
+    height: 100%;
+}
+.product-card > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
+    height: 100%;
+  }
 /* 圖片樣式 */
 .product-card img {
     width: 100%;
@@ -658,49 +653,55 @@ body {
 
 /* 卡片內容樣式 */
 .product-content {
-    padding: 0;
+    padding: 20px;
+    flex-grow: 1;
     
 }
 
 .product-content h2 {
-    font-size: 18px;
-    margin: 0 0 10px;
+    font-size: 24px;
+    margin-bottom: 12px;
 }
 
 .product-content p {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #4c4c4c;
     
 }
 
 /* 按鈕樣式 */
 .product-action {
-    padding: 15px;
-    background-color: #fff;
+    padding: 0 20px 20px;
 }
 
 .product-action a {
     display: inline-block;
+    background: #0078d4;
+    color: white;
     padding: 10px 20px;
-    background-color: #0078d4;
-    color: #fff;
-    font-size: 14px;
+    text-decoration: none;
     border-radius: 4px;
-    font-weight: bold;
+    transition: background 0.3s;
 }
+.product-action a:hover {
+    background: #006cbd;
+  }
 /* 響應式設計 */
-@media screen and (max-width: 540px) {
-    .product-card {
-        flex: 1 1 calc(50% - 20px) ; /* 卡片佔兩分之一寬度 */
-        
+@media (max-width: 1082px) {
+    .product-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
+  }
+  
+  /* 電腦: 四欄 */
+  @media (min-width: 1083px) {
+    .product-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+ 
 
-@media screen and (max-width: 480px) {
-    .product-card {
-        flex: 1 1 100%; /* 卡片佔整行寬度 */
-    }
-}
 
 /* ----------------------Copilot  */
 a {
@@ -712,39 +713,51 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Copilot 區域 */
 .copilot-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px; /* 控制文字卡片和圖片的間距 */
-    padding-right: .75rem;
-    padding-left: .75rem;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    flex-wrap: wrap; /* 支援響應式換行 */
+    width: 90vw;
+    left: 5vw;
+    flex-direction: column;
     background-color: #fff; /* 背景顏色 */
+    position: relative;
+    margin: 10% 0;
+    
 }
 
 /* 文字卡片 */
-.copilot-text {
-    flex: 1; /* 占據剩餘空間 */
-    max-width: 50%; /* 最大寬度為容器的一半 */
-    min-width: 300px; /* 最小寬度 */
+.copilot-item{
     display: flex;
-    flex-direction: column;
+    background-color: #000;
+    
+}
+.copilot-text {
+    position: absolute;
+    display: flex;
+    align-items: start;
     gap: 15px; /* 控制卡片內部元素的間距 */
+    z-index: 1;
+    left: 100PX;
+    flex-wrap: wrap;
+    top: 50%;
+    bottom: auto;    
+    flex-direction: column;
+    
+    
 }
 
+
+
 .copilot-text h2 {
-    font-size: 24px;
+    font-size: 2vw;
     margin: 0;
     color: #262626;
 }
 
 .copilot-text p {
-    font-size: 16px;
+    font-size: 1.5vw;
     margin: 0;
     color: #555;
 }
@@ -758,23 +771,83 @@ a:hover {
     font-weight: bold;
     text-align: center;
 }
-
+@media screen and (max-width: 859px) {
+   
+    .copilot-section {
+        max-width: 1200px;
+        /* margin: 0 auto; */
+        margin-bottom: 30vh;
+        padding: 40px 20px 0 0;
+        background-color: #fff;
+    }
+    
+    .image-container {
+        margin-bottom: 30px;
+    }
+    
+    .image-container img {
+        width: 100%;
+        max-width: 1083px;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .copilot-text {
+        text-align: center;
+        /* background-color: #000; */
+        top: 400px;
+        left: 0;
+    }
+    
+    .copilot-text h2 {
+        font-size: 32px;
+        margin-bottom: 16px;
+        color: #000;
+        font-weight: 600;
+    }
+    
+    .copilot-text p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+    
+    .download-button {
+        display: inline-block;
+        background-color: #0078d4;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .download-button:hover {
+        background-color: #006cbd;
+    }
+    
+}
 /* 用於商務 */
 
 /* 圖片容器 */
 .image-container {
-    flex: 1; /* 占據剩餘空間 */
-    max-width: 50%; /* 最大寬度為容器的一半 */
-    min-width: 300px; /* 最小寬度 */
-    text-align: center; /* 圖片居中 */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -50px;
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* 圖片圓角效果 */
-    object-fit: cover;
+    object-fit: contain;
 }
+.copilot-text,
+    .image-container {
+        max-width: 100%;
+    }
 
 /* 響應式設計 */
 @media screen and (max-width: 859px) {
@@ -793,7 +866,7 @@ a:hover {
     }
 }
 
-/* ------------------SURFACE */
+
 
 
 
@@ -808,77 +881,80 @@ a:hover {
 /* 容器樣式 */
 
 .business-container {
-    display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   gap: 20px;
-  padding: 20px;
-  width: 90%;
+    display: grid;
+  gap: 24px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 1600px;
+
 }
 
 /* 卡片樣式 */
 .business-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: calc(25% - 20px); /* 四欄佈局，每欄占 25% 減去間距 */
-    min-width: 250px; 
 
 }
 
 /* 圖片樣式 */
 .business-card img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+  height: auto;
+  object-fit: cover;
 }
 
 /* 卡片內容 */
 .card-content {
-   padding: 0;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .card-content h2 {
-    font-size: 18px;
-    margin: 0 0 10px;
+    font-size: 24px;
+  margin-bottom: 12px;
 }
 
 .card-content p {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c4c4c;
 }
 
 .business-action {
-  padding: 15px;
-    background-color: #fff;
+    padding: 0 20px 20px;
 }
 .business-action a {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #0078d4;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 4px;
-    font-weight: bold;
+  background: #0078d4;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
+.business-action a:hover {
+    background: #006cbd;
+  }
 
 /* 響應式設計 */
-@media screen and (max-width: 540px) {
-    .business-card {
-        flex: 1 1 calc(50% - 20px) ; /* 卡片佔兩分之一寬度 */
-        
-    }
-}
 
-@media screen and (max-width: 480px) {
-    .business-card {
-        flex: 1 1 100%; /* 卡片佔整行寬度 */
+  @media (max-width: 1082px) {
+    .business-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
-
+  }
+  
+  /* 電腦: 四欄 */
+  @media (min-width: 1083px) {
+    .business-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 /* ----------------關注 */
 
 /* Footer 區域 */
