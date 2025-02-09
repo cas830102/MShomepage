@@ -9,10 +9,15 @@
     
 }
 body {
-    max-width: 1600px; /* 限制內容最大寬度 */
-    width: 100%; /* 讓內容自適應 */
-    margin: 0 auto; /* 讓內容置中 */
-    overflow-x: hidden; /* 防止橫向滾動 */
+    
+        margin: 0;
+        padding: 0;
+        width: 100vw; /* 確保佔滿視窗 */
+        overflow-x: hidden; /* 避免水平滾動 */
+        width: 100%;
+    
+    
+
 }
 a {
     text-decoration: none;
@@ -37,7 +42,7 @@ button {
     grid-template-columns: auto 1fr auto;  /* 左邊 LOGO, 中間導航列, 右邊按鈕 */
     align-items: center;
     height: 54px;
-    padding: 0 .75%;
+     padding: 0 48px;
     background-color: #fff;
 }
 
@@ -902,10 +907,11 @@ button {
     
     gap: 24px;
     display: grid;
-    gap: 24px;
     padding: 5rem 0 6rem 0;
     margin: 0 auto;
     max-width: 1600px;
+    width: 100%;
+    box-sizing: content-box;
 }
 
 /* 卡片樣式 */
@@ -1044,13 +1050,13 @@ a:hover {
 /* 文字卡片 */
 
 .card-foreground-text {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: start;
     gap: 15px; /* 控制卡片內部元素的間距 */
     z-index: 1;
-    left: 4.8rem;
-    bottom: 11rem;    
+    right: 25rem;
+    bottom: 28rem;    
     flex-direction: column;
     width: 600px;
     height: 248px;
@@ -1062,9 +1068,9 @@ a:hover {
 .card-foreground-text h2 {
     font-size: 37px;
     line-height: 1.2;
-    margin: 0 0 20px 0;
+    margin: 0 0 1rem 0;
     font-weight: 600;
-    color: #000;
+    color: #fff;
 }
 
 .card-foreground-text p {
@@ -1074,8 +1080,8 @@ a:hover {
         font-weight: 400;
         line-height: 24px;
         text-align: left;
-        color: #000;
-        margin-bottom: 24px;
+        color: #fff;
+        margin-bottom: 1rem;
         display: block;
         cursor: pointer;
         box-sizing: border-box;
@@ -1135,19 +1141,19 @@ a:hover {
         line-height: 24px;
         display: flex;
         justify-content: center;
+        color: #000;
     }
 
     .download-button {
         display: inline-block;
         background-color: #0067b8;
-        color: white;
-        padding: 10px 20px;
+        color: white; 
         text-decoration: none;
         font-weight: 600;
         border: none;
         cursor: pointer;
         transition: background-color 0.3s;
-        margin-top: 1rem; /* 按鈕與段落的間距 */
+        z-index: 20;
     }
 
     .download-button:hover {
@@ -1163,10 +1169,10 @@ a:hover {
         max-width: 97%;
         color: #000;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        height: 223px;
+      
         background-color: #fff;
         margin: -3rem 0 0 0;
-        z-index: 20;
+        
     }
    
     .card-foreground-text p {
@@ -1181,7 +1187,7 @@ a:hover {
         max-width: 97%;
         color: #000;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        height: 223px;
+       
         background-color: #fff;
         margin: -3rem 0 0 0;
         z-index: 20;
@@ -1197,25 +1203,29 @@ a:hover {
 
 /* -----適用於商務 */
 
-.business-h2 {
-    font-size: 29px;
-    color: #000;
-    max-width: 1600px;
-    margin-top: 6rem;
-    padding-top: 3rem;
-    
-}
+
 
 /* 容器樣式 */
 
 .business-container {
+    position: relative;
     display: grid;
     gap: 24px;
-    padding: 0 0 6rem 0;
+    padding: 5rem 0rem 6rem 0rem;
     margin: 0 auto;
     max-width: 1600px;
+    box-sizing: content-box;
 }
-
+.business-h2 {
+    position: absolute;
+    font-size: 29px;
+    color: #000;
+    max-width: 1600px;
+    margin-top: 0rem;
+    
+    
+    
+}
 
 
 
@@ -1371,7 +1381,9 @@ a:hover {
 .footer {
     max-width: 1600px;
     width: 100%;
+    padding-top: ;
     margin: 0 auto;
+    box-sizing: content-box;
 }
 
 /* 關注區域 */
@@ -1432,16 +1444,18 @@ a:hover {
 /* ------------底層瀏覽列 */
 
 /* Footer 區域 */
-
+.footer-background{
+    background-color: #f2f2f2f2;
+    padding: 0 83px;
+    width: 100%;
+    margin: 0 auto;
+}
 .footer-nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 1600px;
-    background-color: #f2f2f2f2;
+    margin: 0 auto;
     padding: 3rem 0 0 0;
-    
-    
-
 }
 .footer-column{
     width: 100%;
@@ -1477,10 +1491,20 @@ a:hover {
     .footer-nav {
         grid-template-columns: repeat(3, 1fr);
     }
+    .footer-background{
+        background-color: #f2f2f2f2;
+        padding: 0 24px;
+        width: 100%;
+    }
 }
 @media screen and (max-width: 539px) {
     .footer-nav {
         grid-template-columns: 1fr;
+    }
+    .footer-background{
+        background-color: #f2f2f2f2;
+        padding: 0 24px;
+        width: 100%;
     }
 }
 
@@ -1494,8 +1518,12 @@ a:hover {
     background-color: #f2f2f2f2; /* 背景顏色 */
     font-size: 11px;
     color: #616161;
-    flex-wrap: nowrap; /* 支援響應式換行 */
+    flex-wrap: nowrap; 
     padding: 2rem 0;
+   
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 3rem 0 0 0;
    
 }
 
