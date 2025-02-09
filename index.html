@@ -1,201 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="探索 Microsoft 產品和服務。了解 Surface 電腦、Xbox、遊戲、Windows、Office 等相關資訊">
     <title>Microsoft - 人工智慧、雲端、生產力、計算、遊戲和應用程式</title>
     <link rel="canonical" href="https://www.microsoft.com/zh-tw">
     <link rel="dns-prefetch" href="https://cdn-dynmedia-1.microsoft.com">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./pic/favicon.ico">
-    <link rel="reset" href="./reset.css">
+    <link rel="icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <meta name="description" content="探索家用或商務用的 Microsoft 產品和服務。選購 Microsoft 365、Copilot、Teams、Xbox、Windows、Azure 和 Surface 等。"/>
+    <meta property="og:url" content="https://www.microsoft.com/zh-tw"/>
+    <meta property="og:title" content="Microsoft - 人工智慧、雲端、生產力、計算、遊戲和應用程式"/>
+    <meta property="og:description" content="探索家用或商務用的 Microsoft 產品和服務。選購 Microsoft 365、Copilot、Teams、Xbox、Windows、Azure 和 Surface 等。"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:url" content="https://www.microsoft.com/zh-tw"/>
+    <meta name="twitter:title" content="Microsoft - 人工智慧、雲端、生產力、計算、遊戲和應用程式"/>
+    <meta name="twitter:description" content="探索家用或商務用的 Microsoft 產品和服務。選購 Microsoft 365、Copilot、Teams、Xbox、Windows、Azure 和 Surface 等。"/>
+    <meta name="twitter:card" content="summary"/>
+
+
+
+
+
 </head>
 <body>
+    <div class="site-description" hidden>
+        <p>這是一個專門介紹 Microsoft 產品的網站，涵蓋 Windows、Surface、Azure 雲端等最新技術與資訊。</p>
+    </div>
 
 <!-- ------------main header -->
 
-<header class="main-header">
+<header class="main-header" role="banner">
     <div class="main-header-left">
         <!-- Logo -->
-        <a href="https://www.microsoft.com"><img src="./pic/MSlogo.png" alt="mslogo"></a>
+        <div class="main-header-img"  draggable="true">
+            <a href="https://www.microsoft.com" aria-label="Microsoft Homepage">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft"  draggable="true">
+                <span itemprop="name" role="presentation" aria-hidden="true">Microsoft</span>
+            </a>
+        </div>
         <!-- 導覽列 -->
-        <nav class="main-nav">
-            <ul>
-                <li><a href="https://www.microsoft.com/zh-tw/microsoft-365">Microsoft 365</a></li>
-                <li><a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software">Teams</a></li>
-                <li><a href="https://www.microsoft.com/zh-tw/windows/">Windows</a></li>
-                <li><a href="https://www.microsoft.com/surface">Surface</a></li>
-                <li><a href="https://www.xbox.com/">Xbox</a></li>
-                <li><a href="https://support.microsoft.com/zh-tw">支援</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="main-nav" role="navigation" aria-label="主要導航"  draggable="true">
+        <ul>
+            <li><a href="https://www.microsoft.com/zh-tw/microsoft-365" aria-label="前往 Microsoft 365 產品頁面" draggable="true">Microsoft 365</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software" aria-label="前往 Microsoft Teams 產品頁面" draggable="true">Teams</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/windows/" aria-label="前往 Windows 產品頁面" draggable="true">Windows</a></li>
+            <li><a href="https://www.microsoft.com/surface" aria-label="前往 Surface 產品頁面" draggable="true">Surface</a></li>
+            <li><a href="https://www.xbox.com/" aria-label="前往 Xbox 產品頁面" draggable="true">Xbox</a></li>
+            <li><a href="https://support.microsoft.com/zh-tw" aria-label="前往 支援頁面" draggable="true">支援</a></li>
+        </ul>
+    </nav>
+</div>
     <div class="main-header-right">
         <!-- 所有 Microsoft -->
-        <div class="dropdown">
-            <button class="all-microsoft"><span>所有 Microsoft</span></button>
+        <div class="dropdown"  draggable="true">
+            <button class="all-microsoft-btn" aria-expanded="false" aria-haspopup="true" aria-label="開啟所有 Microsoft 產品選單">
+                所有 Microsoft 
+            </button>   
             <input type="checkbox" id="side-menu-swich" hidden>
-            <label for="side-menu-swich"><i class="fa-solid fa-chevron-down" display="none"></i></label>
-            <div class="sitemap-container">
+            <label for="side-menu-swich" aria-label="展開或摺疊側邊選單"><i class="fa-solid fa-chevron-down" display="none"></i></label>
+            <div class="sitemap-container" aria-hidden="true">
                 <ul class="sitemap">
                             <li>
                                 <h3>軟體</h3>
-                                <a href="https://www.microsoft.com/zh-tw/store/apps/windows?icid=CNavAppsWindowsApps">Windows 應用程式</a>
-                                <a href="https://www.microsoft.com/zh-tw/ai">AI</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onedrive/online-cloud-storage">OneDrive</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook">Outlook</a>
-                                <a href="https://skype.pchome.com.tw/">Skype</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onenote/digital-note-taking-app">OneNote</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software">Microsoft Teams</a>
+                                <a href="https://www.microsoft.com/zh-tw/store/apps/windows?icid=CNavAppsWindowsApps" aria-label="前往 Windows 應用程式" draggable="true">Windows 應用程式</a>
+                                <a href="https://www.microsoft.com/zh-tw/ai" aria-label="前往 AI">AI</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onedrive/online-cloud-storage" aria-label="前往 OneDrive" draggable="true">OneDrive</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook" aria-label="前往 Outlook" draggable="true">Outlook</a>
+                                <a href="https://skype.pchome.com.tw/" aria-label="前往 Skype" draggable="true">Skype</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onenote/digital-note-taking-app" aria-label="前往 OneNote" draggable="true">OneNote</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software" aria-label="前往 Microsoft Teams" draggable="true">Microsoft Teams</a>
                             </li>
                             <li>
                                 <h3>個人電腦和設備</h3>
-                                <a href="https://www.microsoft.com/zh-tw/accessories">電腦配件</a>
+                                <a href="https://www.microsoft.com/zh-tw/accessories" aria-label="前往 電腦配件" draggable="true">電腦配件</a>
                             </li>
                             <li>
                                 <h3>娛樂</h3>
-                                <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?WT.mc_id=CNavGamesXboxGamePassUltimate">Xbox Game Pass Ultimate</a>
-                                <a href="https://www.microsoft.com/zh-tw/p/xbox-live-gold/cfq7ttc0k5dj?WT.mc_id=CNavGamesXboxLiveGold">Xbox Live Gold</a>
-                                <a href="https://www.xbox.com/zh-tw/games/">Xbox 與遊戲</a>
-                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=CNavGamesWindowsGames">電腦遊戲</a>
-                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=TopNavWindowsGames">Windows 遊戲</a>
+                                <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?WT.mc_id=CNavGamesXboxGamePassUltimate" aria-label="前往 Xbox Game Pass Ultimate" draggable="true">Xbox Game Pass Ultimate</a>
+                                <a href="https://www.microsoft.com/zh-tw/p/xbox-live-gold/cfq7ttc0k5dj?WT.mc_id=CNavGamesXboxLiveGold" aria-label="前往 Xbox Live Gold" draggable="true">Xbox Live Gold</a>
+                                <a href="https://www.xbox.com/zh-tw/games/" aria-label="前往 Xbox 與遊戲" draggable="true">Xbox 與遊戲</a>
+                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=CNavGamesWindowsGames" aria-label="前往 電腦遊戲" draggable="true">電腦遊戲</a>
+                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=TopNavWindowsGames" aria-label="前往 Windows 遊戲" draggable="true">Windows 遊戲</a>
                             </li>
                             <li>
                                 <h3>商務適用</h3>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-cloud">Microsoft Cloud</a>
-                                <a href="https://www.microsoft.com/zh-tw/security">Microsoft 安全性</a>
-                                <a href="https://azure.microsoft.com/">Azure</a>
-                                <a href="https://www.microsoft.com/zh-tw/dynamics-365">Dynamics 365</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/business">商務用 Microsoft 365</a>
-                                <a href="https://www.microsoft.com/zh-tw/industry">Microsoft 產業</a>
-                                <a href="https://www.microsoft.com/zh-tw/power-platform">Microsoft Power Platform</a>
-                                <a href="https://www.microsoft.com/zh-tw/windows-365">Windows 365</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-cloud" aria-label="前往 Microsoft Cloud" draggable="true">Microsoft Cloud</a>
+                                <a href="https://www.microsoft.com/zh-tw/security" aria-label="前往 Microsoft 安全性" draggable="true">Microsoft 安全性</a>
+                                <a href="https://azure.microsoft.com/" aria-label="前往 Azure">Azure</a>
+                                <a href="https://www.microsoft.com/zh-tw/dynamics-365" aria-label="前往 Dynamics 365" draggable="true">Dynamics 365</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/business" aria-label="前往 商務用 Microsoft 365" draggable="true">商務用 Microsoft 365</a>
+                                <a href="https://www.microsoft.com/zh-tw/industry" aria-label="前往 Microsoft 產業" draggable="true">Microsoft 產業</a>
+                                <a href="https://www.microsoft.com/zh-tw/power-platform" aria-label="前往 Microsoft Power Platform" draggable="true">Microsoft Power Platform</a>
+                                <a href="https://www.microsoft.com/zh-tw/windows-365" aria-label="前往 Windows 365" draggable="true">Windows 365</a>
                             </li>
                             <li>
                                 <h3>開發人員與 IT</h3>
-                                <a href="https://developer.microsoft.com/">Microsoft 開發人員工具</a>
-                                <a href="https://learn.microsoft.com/docs/">文件</a>
-                                <a href="https://learn.microsoft.com/">Microsoft Learn</a>
-                                <a href="https://techcommunity.microsoft.com/">Microsoft 技術社群</a>
-                                <a href="https://azuremarketplace.microsoft.com/">Azure Marketplace</a>
-                                <a href="https://appsource.microsoft.com/">AppSource</a>
-                                <a href="https://visualstudio.microsoft.com/">Visual Studio</a>
+                                <a href="https://developer.microsoft.com/" aria-label="前往 Microsoft 開發人員工具" draggable="true">Microsoft 開發人員工具</a>
+                                <a href="https://learn.microsoft.com/docs/" aria-label="前往 文件" draggable="true">文件</a>
+                                <a href="https://learn.microsoft.com/" aria-label="前往 Microsoft Learn" draggable="true">Microsoft Learn</a>
+                                <a href="https://techcommunity.microsoft.com/" aria-label="前往 Microsoft 技術社群" draggable="true">Microsoft 技術社群</a>
+                                <a href="https://azuremarketplace.microsoft.com/" aria-label="前往 Azure Marketplace" draggable="true">Azure Marketplace</a>
+                                <a href="https://appsource.microsoft.com/" aria-label="前往 AppSource" draggable="true">AppSource</a>
+                                <a href="https://visualstudio.microsoft.com/" aria-label="前往 Visual Studio" draggable="true">Visual Studio</a>
                             </li>
                             <li>
                                 <h3>其他</h3>
-                                <a href="https://www.microsoft.com/rewards">Microsoft Rewards</a>
-                                <a href="https://www.microsoft.com/zh-tw/download">免费下载與安全性</a>
-                                <a href="https://www.microsoft.com/zh-tw/education?icid=CNavMSCOML0_Studentsandeducation">教育</a>
-                                <a href="https://www.microsoft.com/zh-tw/p/xbox-禮品卡-數位代碼/cfq7ttc0k7qp/0003?icid=TopNavMoreGiftCards">禮品卡</a>
-                                <a href="https://www.microsoft.com/licensing/">Licensing</a>
+                                <a href="https://www.microsoft.com/rewards" aria-label="前往 Microsoft Rewards" draggable="true">Microsoft Rewards</a>
+                                <a href="https://www.microsoft.com/zh-tw/download" aria-label="前往 下載與安全性" draggable="true">免费下载與安全性</a>
+                                <a href="https://www.microsoft.com/zh-tw/education?icid=CNavMSCOML0_Studentsandeducation" aria-label="前往 教育" draggable="true">教育</a>
+                                <a href="https://www.microsoft.com/zh-tw/p/xbox-禮品卡-數位代碼/cfq7ttc0k7qp/0003?icid=TopNavMoreGiftCards" aria-label="前往 禮品卡" draggable="true">禮品卡</a>
+                                <a href="https://www.microsoft.com/licensing/" aria-label="前往 Licensing" draggable="true">Licensing</a>
                             </li>
                         </ul>
                         <div class="sitemap-footer">
-                            <a href="https://www.microsoft.com/zh-tw/sitemap">檢視網站地圖></a>
+                            <a href="https://www.microsoft.com/zh-tw/sitemap" aria-label="檢視網站地圖" draggable="true">檢視網站地圖></a>
                         </div>
                     </div>
                 </div>
+                
                  <!-- 搜尋 -->
-        <div class="search">
-            <button ><span>搜尋&nbsp</span><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <!-- 購物車 -->
-        <div class="cart">
-            <button><span>購物車&nbsp</span><i class="fa-solid fa-cart-shopping"></i></button>
-        </div>
-        <!-- 登入 -->
-        <div class="login">
-            <button><span>登入&nbsp</span><i class="fa-solid fa-user-plus"></i></button>
-        </div>    
+                 <div class="search-btn" draggable="true">
+                    <button aria-label="搜尋 Microsoft.com">
+                        <span>搜尋</span>
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    </button>
+                </div>
+                
+                <!-- 購物車按鈕 -->
+                <div class="cart-btn" draggable="true">
+                    <button aria-label="購物車">
+                        <span>購物車</span>
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    </button>
+                </div>
+        
+                <!-- 登入按鈕 -->
+                <div class="login-btn" draggable="true">
+                    <button aria-label="登入您的 Microsoft 帳戶">
+                        <span>登入</span>
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                
     </div>
 </header>
+
+
+
+
+
+
 
 
 <!-- 左側選單 -->
 <div class="menu-toggle">
     <!-- 三橫線按鈕 -->
-    <input type="checkbox" id="menu-toggle-checkbox" hidden>
-    <label for="menu-toggle-checkbox" class="menu-icon" >
-        <i class="fa-solid fa-bars"></i>
-    </label>
+    <input type="checkbox" id="menu-toggle-checkbox" hidden aria-hidden="true">
+<label for="menu-toggle-checkbox" class="menu-icon" aria-label="展開或摺疊主選單">
+    <div class="menu-overlay"></div><i class="fa-solid fa-bars" aria-hidden="true"></i>
+</label>
+    <!-- 搜尋 -->
+    <div class="search-btn" draggable="true">
+        <button aria-label="搜尋 Microsoft.com">
+            <span>搜尋</span>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+    </div>
 
     <!-- 下拉選單 -->
-    <nav class="mobile-nav">
+    <nav class="mobile-nav" aria-label="行動裝置導航">
         <ul>
-            <li><a href="#">Microsoft 365</a></li>
-            <li><a href="#">Teams</a></li>
-            <li><a href="#">Windows</a></li>
-            <li><a href="#">Surface</a></li>
-            <li><a href="#">Xbox</a></li>
-            <li><a href="#">支援</a></li>
+            <li><a href="#" aria-label="前往 Microsoft 365">Microsoft 365</a></li>
+            <li><a href="#" aria-label="前往 Teams">Teams</a></li>
+            <li><a href="#" aria-label="前往 Windows">Windows</a></li>
+            <li><a href="#" aria-label="前往 Surface">Surface</a></li>
+            <li><a href="#" aria-label="前往 Xbox">Xbox</a></li>
+            <li><a href="#" aria-label="前往 支援">支援</a></li>
                         <li>
-                                <h3>軟體<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>軟體<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links">
-                                    <a href="https://www.microsoft.com/zh-tw/store/apps/windows?icid=CNavAppsWindowsApps">Windows 應用程式</a>
-                                <a href="https://www.microsoft.com/zh-tw/ai">AI</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onedrive/online-cloud-storage">OneDrive</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook">Outlook</a>
-                                <a href="https://skype.pchome.com.tw/">Skype</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onenote/digital-note-taking-app">OneNote</a>
-                                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software">Microsoft Teams</a>
+                                    <a href="https://www.microsoft.com/zh-tw/store/apps/windows?icid=CNavAppsWindowsApps" aria-label="前往 Windows 應用程式">Windows 應用程式</a>
+                                <a href="https://www.microsoft.com/zh-tw/ai" aria-label="前往 AI">AI</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onedrive/online-cloud-storage" aria-label="前往 OneDrive">OneDrive</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook" aria-label="前往 Outlook">Outlook</a>
+                                <a href="https://skype.pchome.com.tw/" aria-label="前往 Skype">Skype</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-365/onenote/digital-note-taking-app" aria-label="前往 OneNote">OneNote</a>
+                                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software" aria-label="前往 Microsoft Teams">Microsoft Teams</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>個人電腦和設備<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>個人電腦和設備<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links">
-                                    <a href="https://www.microsoft.com/zh-tw/accessories">電腦配件</a>
+                                    <a href="https://www.microsoft.com/zh-tw/accessories" aria-label="前往 電腦配件">電腦配件</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>娛樂<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>娛樂<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links">
-                                    <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?WT.mc_id=CNavGamesXboxGamePassUltimate">Xbox Game Pass Ultimate</a>
-                                <a href="https://www.microsoft.com/zh-tw/p/xbox-live-gold/cfq7ttc0k5dj?WT.mc_id=CNavGamesXboxLiveGold">Xbox Live Gold</a>
-                                <a href="https://www.xbox.com/zh-tw/games/">Xbox 與遊戲</a>
-                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=CNavGamesWindowsGames">電腦遊戲</a>
-                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=TopNavWindowsGames">Windows 遊戲</a>
+                                    <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?WT.mc_id=CNavGamesXboxGamePassUltimate" aria-label="前往 Xbox Game Pass Ultimate">Xbox Game Pass Ultimate</a>
+                                <a href="https://www.microsoft.com/zh-tw/p/xbox-live-gold/cfq7ttc0k5dj?WT.mc_id=CNavGamesXboxLiveGold" aria-label="前往 Xbox Live Gold">Xbox Live Gold</a>
+                                <a href="https://www.xbox.com/zh-tw/games/" aria-label="前往 Xbox 與遊戲">Xbox 與遊戲</a>
+                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=CNavGamesWindowsGames" aria-label="前往 電腦遊戲">電腦遊戲</a>
+                                <a href="https://www.microsoft.com/zh-tw/store/games/windows?icid=TopNavWindowsGames" aria-label="前往 Windows 遊戲">Windows 遊戲</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>商務適用<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>商務適用<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links">
-                                    <a href="https://www.microsoft.com/zh-tw/microsoft-cloud">Microsoft Cloud</a>
-                                    <a href="https://www.microsoft.com/zh-tw/security">Microsoft 安全性</a>
-                                    <a href="https://azure.microsoft.com/">Azure</a>
-                                    <a href="https://www.microsoft.com/zh-tw/dynamics-365">Dynamics 365</a>
-                                    <a href="https://www.microsoft.com/zh-tw/microsoft-365/business">商務用 Microsoft 365</a>
-                                    <a href="https://www.microsoft.com/zh-tw/industry">Microsoft 產業</a>
-                                    <a href="https://www.microsoft.com/zh-tw/power-platform">Microsoft Power Platform</a>
-                                    <a href="https://www.microsoft.com/zh-tw/windows-365">Windows 365</a>
+                                    <a href="https://www.microsoft.com/zh-tw/microsoft-cloud" aria-label="前往 Microsoft Cloud">Microsoft Cloud</a>
+                                    <a href="https://www.microsoft.com/zh-tw/security" aria-label="前往 Microsoft 安全性">Microsoft 安全性</a>
+                                    <a href="https://azure.microsoft.com/" aria-label="前往 Azure">Azure</a>
+                                    <a href="https://www.microsoft.com/zh-tw/dynamics-365" aria-label="前往 Dynamics 365">Dynamics 365</a>
+                                    <a href="https://www.microsoft.com/zh-tw/microsoft-365/business" aria-label="前往 商務用 Microsoft 365">商務用 Microsoft 365</a>
+                                    <a href="https://www.microsoft.com/zh-tw/industry" aria-label="前往 Microsoft 產業">Microsoft 產業</a>
+                                    <a href="https://www.microsoft.com/zh-tw/power-platform" aria-label="前往 Microsoft Power Platform">Microsoft Power Platform</a>
+                                    <a href="https://www.microsoft.com/zh-tw/windows-365" aria-label="前往 Windows 365">Windows 365</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>開發人員與 IT<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>開發人員與 IT<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links">
-                                    <a href="https://developer.microsoft.com/">Microsoft 開發人員工具</a>
-                                <a href="https://learn.microsoft.com/docs/">文件</a>
-                                <a href="https://learn.microsoft.com/">Microsoft Learn</a>
-                                <a href="https://techcommunity.microsoft.com/">Microsoft 技術社群</a>
-                                <a href="https://azuremarketplace.microsoft.com/">Azure Marketplace</a>
-                                <a href="https://appsource.microsoft.com/">AppSource</a>
-                                <a href="https://visualstudio.microsoft.com/">Visual Studio</a>
+                                    <a href="https://developer.microsoft.com/" aria-label="前往 Microsoft 開發人員工具">Microsoft 開發人員工具</a>
+                                <a href="https://learn.microsoft.com/docs/" aria-label="前往 文件">文件</a>
+                                <a href="https://learn.microsoft.com/" aria-label="前往 Microsoft Learn">Microsoft Learn</a>
+                                <a href="https://techcommunity.microsoft.com/" aria-label="前往 Microsoft 技術社群">Microsoft 技術社群</a>
+                                <a href="https://azuremarketplace.microsoft.com/" aria-label="前往 Azure Marketplace">Azure Marketplace</a>
+                                <a href="https://appsource.microsoft.com/" aria-label="前往 AppSource">AppSource</a>
+                                <a href="https://visualstudio.microsoft.com/" aria-label="前往 Visual Studio">Visual Studio</a>
                                 </div>
                             </li>
                             <li>
-                                <h3>其他<i class="fa-solid fa-chevron-down"></i></h3>
+                                <h3>其他<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></h3>
                                 <div class="nav-links"> 
-                                    <a href="https://www.microsoft.com/rewards">Microsoft Rewards</a>
-                                <a href="https://www.microsoft.com/zh-tw/download">免费下载與安全性</a>
-                                <a href="https://www.microsoft.com/zh-tw/education?icid=CNavMSCOML0_Studentsandeducation">教育</a>
-                                <a href="https://www.microsoft.com/zh-tw/p/xbox-禮品卡-數位代碼/cfq7ttc0k7qp/0003?icid=TopNavMoreGiftCards">禮品卡</a>
-                                <a href="https://www.microsoft.com/licensing/">Licensing</a>
+                                    <a href="https://www.microsoft.com/rewards" aria-label="前往 Microsoft Rewards">Microsoft Rewards</a>
+                                <a href="https://www.microsoft.com/zh-tw/download" aria-label="前往 下載與安全性">免费下载與安全性</a>
+                                <a href="https://www.microsoft.com/zh-tw/education?icid=CNavMSCOML0_Studentsandeducation" aria-label="前往 教育">教育</a>
+                                <a href="https://www.microsoft.com/zh-tw/p/xbox-禮品卡-數位代碼/cfq7ttc0k7qp/0003?icid=TopNavMoreGiftCards" aria-label="前往 禮品卡">禮品卡</a>
+                                <a href="https://www.microsoft.com/licensing/" aria-label="前往 Licensing">Licensing</a>
                                 </div>  
                             </li>
                             <div class="sitemap-footer">
-                                <a href="https://www.microsoft.com/zh-tw/sitemap">檢視網站地圖></a>
+                                <a href="https://www.microsoft.com/zh-tw/sitemap" aria-label="檢視網站地圖">檢視網站地圖></a>
                             </div>
                         
                         
@@ -205,336 +256,428 @@
 
 
 
+
+
 <!-- 輪播圖片區 -->
-<div class="carousel">
+<div class="carousel" role="region" aria-label="推薦內容輪播"  draggable="true">
     <div class="carousel-container">
         <div class="carousel-inner" id="carouselInner">
-            <div class="carousel-item">
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP2-859x540" alt="圖片1">
+            <div class="carousel-item" role="tabpanel" aria-hidden="false">
+                <picture>
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP5-1920x600" media="(min-width: 1400px)" data-automation-test-id="HighlightImgSrcXLarge-highlight-uidc387">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP4-1399x600" media="(min-width: 1084px)" data-automation-test-id="HighlightImgSrcLarge-highlight-uidc387">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP3-1083x600" media="(min-width: 860px)" data-automation-test-id="HighlightImgSrcMedium-highlight-uidc387">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP2-859x540" media="(min-width: 540px)" data-automation-test-id="HighlightImgSrcSmall-highlight-uidc387">
+                    <img id="img-highlight-uidc387" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP2-859x540" class="card-img w-100" data-automation-test-id="HighlightImage-highlight-uidc387" alt="屬於 Microsoft 365 訂閱的一部分的各種應用程式，例如 Word、Excel、PowerPoint、Microsoft Defender、OneDrive、OneCloud 和 Clipchamp。">
+                </picture>
+        
                 <div class="content-wrapper">
-                    <div class="text-card">
-                        <h2>認識 Surface Pro</h2>
-                        <p>這台膝上型電腦擁有無與倫比的彈性和人工智慧功能，例如即時輔助字幕和 Cocreator，助您獲得更多選項。</p>
-                        <a class="cta-button" href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro-11th-edition?icid=mscom_marcom_H1a_SurfacePro11Edition_FY24SpringSurface">深入了解</a>
+                    <div class="text-card-rgba" >
+                        <h2>
+                            驚奇不斷的收穫
+                        </h2>
+                        <p>
+                            Microsoft 365 在您喜愛的應用程式中提供雲端儲存空間、安全性及 Microsoft Copilot——購買一個方案，就可享有這一切。                        </p>
+                        <a class="cta-button" href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro-11th-edition?icid=mscom_marcom_H1a_SurfacePro11Edition_FY24SpringSurface" aria-label="深入了解">選購 Microsoft 365</a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Microsoft-365-Icon-Toss-Cycle-2:VP2-859x540" alt="圖片2">
-                <div class="content-wrapper">
+            <div class="carousel-item" role="tabpanel" aria-hidden="true">
+                <picture>
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP5-1920x600" media="(min-width: 1400px)" data-automation-test-id="HighlightImgSrcXLarge-highlight-uida166">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP4-1399x600" media="(min-width: 1084px)" data-automation-test-id="HighlightImgSrcLarge-highlight-uida166">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP3-1083x600" media="(min-width: 860px)" data-automation-test-id="HighlightImgSrcMedium-highlight-uida166">
+                    <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP2-859x540" media="(min-width: 540px)" data-automation-test-id="HighlightImgSrcSmall-highlight-uida166">
+                    <img id="img-highlight-uida166" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP2-859x540" class="card-img w-100" data-automation-test-id="HighlightImage-highlight-uida166" alt="寶石藍 Surface Pro Flex Keyboard 和 Surface Pro 第 11 版 Copilot+ PC。">
+                </picture>
+                <div class="content-wrapper-alt">
                     <div class="text-card">
-                        <h2>驚奇不斷的收穫</h2>
-                        <p>Microsoft 365 在您喜愛的應用程式中提供雲端儲存空間、安全性及 Microsoft Copilot——購買一個方案，就可享有這一切。</p>
-                        <a class="cta-button" href="https://www.microsoft.com/zh-tw/microsoft-365/buy/compare-all-microsoft-365-products?icid=mscom_marcom_H2a_Microsoft365AI">選購 Microsoft 365</a>
+                        <h2>
+                            認識 Surface Pro
+                        </h2>
+                        <p>
+                            這台膝上型電腦擁有無與倫比的彈性和人工智慧功能，例如即時輔助字幕和 Cocreator，助您獲得更多選項。                        </p>
+                        <a class="cta-button" href="https://www.microsoft.com/zh-tw/microsoft-365/buy/compare-all-microsoft-365-products?icid=mscom_marcom_H2a_Microsoft365AI" aria-label="深入了解">
+                            深入了解</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="carousel-controls">
-        <button class="pause-play-btn" id="pausePlayBtn">
-            <i class="fa-regular fa-circle-pause"></i>        <button class="control-btn" onclick="prevSlide()">＜</button>
-        <div class="nav-dots" id="navDots"></div>
-        <button class="control-btn" onclick="nextSlide()">＞</button>
+        
     </div>
 </div>
-  
-
-
+<div class="carousel-controls" aria-label="輪播控制">
+    <button class="pause-play-btn" id="pausePlayBtn" aria-label="播放或暫停輪播" aria-pressed="false">
+        <i class="fa-regular fa-circle-pause" aria-hidden="true"></i>
+    </button>
+    <button class="pre-btn" onclick="prevSlide()" aria-label="上一張">＜</button>
+    <div class="nav-dots" id="navDots" role="tablist" aria-label="輪播頁面選擇"></div>
+    <button class="next-btn" onclick="nextSlide()" aria-label="下一張">＞</button>
+</div>
  <!-- 三欄 -->
- <div class="icon-list">
-    <ul>
-        <li>
-            <img src="./pic/Link-List-Icons-Microsoft-365.svg" alt="Microsoft 365">
-            <a href="https://www.microsoft.com/zh-tw/microsoft-365/buy/compare-all-microsoft-365-products?icid=MSCOM_QL_M365">選擇您的 Microsoft 365</a>
-        </li>
-        <li>
-            <img src="./pic/Link-List-Icons-Surface-Devices.svg" alt="Surface 裝置">
-            <a href="https://www.microsoft.com/zh-tw/surface?icid=MSCOM_QL_Surface">選購 Surface 裝置</a>
-        </li>
-        <li>
-            <img src="./pic/Link-List-Icons-Microsoft-365.svg" alt="Windows 11">
-            <a href="https://www.microsoft.com/zh-tw/windows/get-windows-11?icid=MSCOM_QL_Windows">取得 Windows 11</a>
-        </li>
-    </ul>
-</div>
+ 
+ <ul class="icon-list" aria-label="快速連結" draggable="true">
+    <li>
+        <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Microsoft-365?wid=40&hei=40" alt="Microsoft 365" draggable="true">
+        <a href="https://www.microsoft.com/zh-tw/microsoft-365/buy/compare-all-microsoft-365-products?icid=MSCOM_QL_M365" aria-label="選擇您的 Microsoft 365" draggable="true">選擇您的 Microsoft 365</a>
+    </li>
+    <li>
+        <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Surface-Devices?wid=40&hei=40" alt="Surface 裝置" draggable="true">
+        <a href="https://www.microsoft.com/zh-tw/surface?icid=MSCOM_QL_Surface" aria-label="選購 Surface 裝置" draggable="true">選購 Surface 裝置</a>
+    </li>
+    <li class="full-width"> <!-- 新增 class 來控制第二行 -->
+        <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Microsoft-365?wid=40&hei=40" alt="Windows 11" draggable="true">
+        <a href="https://www.microsoft.com/zh-tw/windows/get-windows-11?icid=MSCOM_QL_Windows" aria-label="取得 Windows 11" draggable="true">取得 Windows 11</a>
+    </li>
+</ul>
 
 
  <!-- 四欄 microsoft 購買 -->
 
   
-  <div class="product-container">
-    <!-- Microsoft 365 -->
-    <div class="product-card">
+ <div class="product-container" aria-label="Microsoft 產品" draggable="true">
+    <div class="product-card" aria-label="Microsoft 365" draggable="true">
         <div>
-            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=406&hei=230&fit=crop" alt="Microsoft 365">
-            <div class="product-content">
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="寶石藍 Surface Laptop 第 7 版 Copilot+ PC。">
+            </picture>
+            <div class="product-content" draggable="true">
+                <span></span>
                 <h2>Surface Laptop Copilot+ PC</h2>
-                
                 <p>使用這款功能強大的膝上型電腦，解鎖人工智慧功能，例如即時輔助字幕 和 Cocreator。</p>
             </div>
-            <div class="product-action">
-                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-7th-edition?icid=mscom_marcom_CPH1a_SurfaceLaptop7Edition_FY24SpringSurface">深入了解</a>
+            <div class="product-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-7th-edition?icid=mscom_marcom_CPH1a_SurfaceLaptop7Edition_FY24SpringSurface" draggable="true" aria-label="深入了解 Surface Laptop Copilot+ PC">深入了解</a>
             </div>
         </div>
     </div>
-    <!-- Xbox Series S -->
-    <div class="product-card">
+    <div class="product-card" aria-label="Xbox Series S" draggable="true">
         <div>
-            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=406&hei=230&fit=crop" alt="Xbox Series S">
-            <div class="product-content">
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Copilot 應用程式的三個螢幕擷取畫面">
+            </picture>
+            <div class="product-content" draggable="true">
+                <h2>Copilot 是您的 AI 良伴</h2>
+                <p>始終在側，隨時隨地為您提供所需支援。</p>
+            </div>
+            <div class="product-action" draggable="true">
+                <a href="https://www.xbox.com/zh-tw/consoles/xbox-series-s?icid=mscom_marcom_CPH2a_XboxSeriesS" draggable="true" aria-label="下載 Copilot 應用程式">下載 Copilot 應用程式</a>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="product-card" aria-label="Game Pass" draggable="true">
+        <div>
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Xbox Series X 主機與 Xbox 控制器">
+            </picture>            <div class="product-content" draggable="true">
+                <h2>Xbox Series X</h2>
+                <p>有史以來最快、最強大的 Xbox。</p>
+            </div>
+            <div class="product-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?icid=mscom_marcom_CPH3a_GamePass" aria-label="選購 Xbox Series X" draggable="true">選購 Xbox Series X</a>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" aria-label="Xbox Series X" draggable="true">
+        <div>
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Xbox Series S 主機與 Xbox 控制器">
+            </picture>            <div class="product-content" draggable="true">
                 <h2>Xbox Series S</h2>
                 <p>有史以來外型最小的 Xbox 所帶來的新一代效能。</p>
             </div>
-            <div class="product-action">
-                <a href="https://www.xbox.com/zh-tw/consoles/xbox-series-s?icid=mscom_marcom_CPH2a_XboxSeriesS">選購 Xbox Series S</a>
+            <div class="product-action" draggable="true">
+                <a href="https://www.xbox.com/zh-tw/consoles/xbox-series-x?icid=mscom_marcom_CPH4a_XboxSeriesX" aria-label="選購 Xbox Series X" draggable="true">選購 Xbox Series S</a>
             </div>
         </div>
     </div>
-
-    <!-- Game Pass -->
-    <div class="product-card">
-        <div>
-            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Game-Pass-Update-September-2024?wid=406&hei=230&fit=crop" alt="Game Pass">
-            <div class="product-content">
-                <h2>Game Pass</h2>
-                <p>在首發日遊玩新遊戲。再加上在主機和電腦上與朋友一起享受數百款高品質遊戲。</p>
-            </div>
-            <div class="product-action">
-                <a href="https://www.microsoft.com/zh-tw/p/xbox-game-pass-ultimate/cfq7ttc0khs0?icid=mscom_marcom_CPH3a_GamePass">立即加入</a>
-            </div>
-        </div>
-        
-    </div>
-    <!-- Xbox Series X -->
-    <div class="product-card">
-        <div>
-            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=406&hei=230&fit=crop" alt="Xbox Series X">
-                <div class="product-content">
-                    <h2>Xbox Series X</h2>
-                    <p>有史以來最快、最強大的 Xbox。</p>
-                </div>
-                <div class="product-action">
-                    <a href="https://www.xbox.com/zh-tw/consoles/xbox-series-x?icid=mscom_marcom_CPH4a_XboxSeriesX">選購 Xbox Series X</a>
-                </div>
-        </div>
-            
-    </div>
-
-    
-
-    
 </div>
+<!-- card-foreground -->
 
-<!-- copilot -->
-
-<div class="copilot-section">
-   
-    <!-- 圖片 -->
+<div class="card-foreground-section" aria-label="card-foreground 介紹" draggable="true">
     <div class="image-container">
-        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Copilot-Native-App-ROW:VP2-859x540" alt="Copilot 是您的 AI 良伴" />
+        <picture>
+            <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP5-1596x600" media="(min-width: 1400px)" data-automation-test-id="HighlightImgSrcXLarge-highlight-uide07d">
+            <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP4-1260x600" media="(min-width: 1084px)" data-automation-test-id="HighlightImgSrcLarge-highlight-uide07d">
+            <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP3-1083x600" media="(min-width: 860px)" data-automation-test-id="HighlightImgSrcMedium-highlight-uide07d">
+            <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP2-859x540" media="(min-width: 540px)" data-automation-test-id="HighlightImgSrcSmall-highlight-uide07d">
+            <img id="img-highlight-uide07d" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Game-Pass-Update-September-2024:VP2-859x540" class="card-img w-100" data-automation-test-id="HighlightImage-highlight-uide07d" alt="各種 Xbox Game Pass 上推出的遊戲可用。">
+        </picture>
     </div>
-     <!-- 文字卡片 -->
-     <div class="copilot-text">
-        <h2>Copilot 是您的 AI 良伴</h2>
-        <p>始終在側，隨時隨地為您提供所需支援。</p>
-        <a href="https://app.adjust.com/1h6cavf8?fallback=https%3A%2F%2Fwww.microsoft.com%2Fmicrosoft-copilot%2Ffor-individuals%2Fcopilot-app%3Fform%3DMY02G2%26OCID%3DMY02G2&redirect_macos=https%3A%2F%2Fwww.microsoft.com%2Fmicrosoft-copilot%2Ffor-individuals%2Fcopilot-app%3Fform%3DMY02G2%26OCID%3DMY02G2" class="download-button">下載 Copilot 應用程式</a>
+    <div class="card-foreground-text" draggable="true">
+        <h2>Game Pass </h2>
+        <p>在首發日遊玩新遊戲。再加上在主機和電腦上與朋友一起享受數百款高品質遊戲。</p>
+        <a href="https://app.adjust.com/1h6cavf8?fallback=https%3A%2F%2Fwww.microsoft.com%2Fmicrosoft-copilot%2Ffor-individuals%2Fcopilot-app%3Fform%3DMY02G2%26OCID%3DMY02G2&redirect_macos=https%3A%2F%2Fwww.microsoft.com%2Fmicrosoft-copilot%2Ffor-individuals%2Fcopilot-app%3Fform%3DMY02G2%26OCID%3DMY02G2"  draggable="true" class="download-button" aria-label="下載 Copilot 應用程式">
+            立即加入</a>
     </div>
 </div>
+
 
 
 <!-- ---------business -->
 
-<h2 class="business">適用於商務</h2>
-
+    <h2 class="business-h2" aria-label="適用於商務">適用於商務</h2>
 <!-- surface -->
-<div class="business-container">
-    <!-- Surface -->
-    <div class="business-card">
-        <img src="./pic/gldn-Surf-CP-SurfaceFamilyForBusiness.png" alt="Surface">
-        <div class="card-content">
-            <h2>適用於商務的 Surface</h2>
-            <p>無論從事哪種工作，都有一款有助於成功的 Surface。</p>
-        </div>
-        <div class="business-action"><a href="https://www.microsoft.com/zh-tw/surface/business?icid=mscom_marcom_CPW1a_SurfaceforBusiness" >立即選購</a>
-        </div> 
-
+<div class="business-container" aria-label="商務產品" draggable="true">
+    <div class="business-card" aria-label="適用於商務的 Surface" draggable="true">
+       <div>
+        <picture>
+			<source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-Laptop-x86-Flex-Keyboard-Family-Facing-005-COMMR?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+			<source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-Laptop-x86-Flex-Keyboard-Family-Facing-005-COMMR?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+			<source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-Laptop-x86-Flex-Keyboard-Family-Facing-005-COMMR?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+			<source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-Laptop-x86-Flex-Keyboard-Family-Facing-005-COMMR?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+			<img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-Laptop-x86-Flex-Keyboard-Family-Facing-005-COMMR?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="白金色 Surface Laptop 商務版，以及搭配黑色 Surface Pro Flex 鍵盤的 Surface Pro 商務版。">
+		</picture>            
+        <div class="card-content" draggable="true">
+                <span class="card-new">新上市</span>
+                <h2>Surface Copilot+ PCs 商務版，現在配備 Intel</h2>
+                <p>隆重介紹第一台配備全新 Intel® Core™ Ultra 處理器 (Series 2) 的 Surface Copilot+ PCs。</p>
+            </div>
+            <div class="business-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/surface/business?icid=mscom_marcom_CPW1a_SurfaceforBusiness" draggable="true" aria-label="立即選購適用於商務的 Surface">深入了解 Surface Pro 商務版 </a>
+                <a class="business-action-next" href="#">深入了解 Surface Laptop 商務版<button>&nbsp&nbsp＞</button></a>
+            </div>
+       </div>    
     </div>
 
     <!-- Microsoft 365 Copilot -->
-    <div class="business-card">
-        <img src="./pic/Content-Card-Copilot-Commercial.png" alt="Microsoft 365 Copilot">
-        <div class="card-content">
-            <h2>Microsoft 365 Copilot</h2>
-            <p>透過商務用 Microsoft 365 中的 AI，節省時間並專注於最重要的事情。</p>
-        </div>
-        <div class="business-action">    
-            <a href="https://www.microsoft.com/zh-tw/microsoft-365/business/copilot-for-microsoft-365?icid=mscom_marcom_CPW2a_M365forBusiness_Copilot">深入了解</a>
+    <div class="business-card" aria-label="Microsoft 365 Copilot" draggable="true">
+        <div>
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Commercial?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="">
+            </picture>            
+            <div class="card-content">
+                <span>&nbsp</span>
+                <h2>Microsoft 365 Copilot</h2>
+                <p>透過商務用 Microsoft 365 中的 AI，節省時間並專注於最重要的事情。</p>
+            </div>
+            <div class="business-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/microsoft-365/business/copilot-for-microsoft-365?icid=mscom_marcom_CPW2a_M365forBusiness_Copilot" draggable="true" aria-label="深入了解 Microsoft 365 Copilot">深入了解</a>
+            </div>
         </div>
     </div>
 
     <!-- Microsoft Teams -->
-    <div class="business-card">
-        <img src="./pic/Content-Card-Microsoft-Teams-Commercial-Meeting.png" alt="Microsoft Teams">
-        <div class="card-content">
-            <h2>為您的企業取得 Microsoft Teams</h2>
-            <p>線上會議、聊天、即時共同作業以及共用雲端儲存空間：所有的一切，盡在此處。</p>
-        </div>
-        <div class="business-action">
-            <a href="https://www.microsoft.com/zh-tw/microsoft-teams/small-medium-business?icid=mscom_marcom_CPW3a_TeamsForBusiness" >為您的企業尋找合適的計畫</a>
-        </div>
+    <div class="business-card" aria-label="Microsoft Teams" draggable="true">
+        <div>
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Microsoft Teams 視訊通話。">
+            </picture>            
+            <div class="card-content" draggable="true">
+                <span>&nbsp</span>
+                <h2>為您的企業取得 Microsoft Teams</h2>
+                <p>線上會議、聊天、即時共同作業以及共用雲端儲存空間：所有的一切，盡在此處。</p>
+            </div>
+            <div class="business-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/small-medium-business?icid=mscom_marcom_CPW3a_TeamsForBusiness"  draggable="true" aria-label="為您的企業尋找合適的 Microsoft Teams 計畫">為您的企業尋找合適的計畫</a>
+            </div>
+        </div>    
     </div>
 
     <!-- Windows 11 -->
-    <div class="business-card">
-        <img src="./pic/Content-Card-Windows-11-Business.png" alt="Windows 11">
-        <div class="card-content">
-            <h2>商務用 Windows 11</h2>
-            <p>專為混合式辦公而設計。 為員工帶來實用性。 為 IT 帶來一致性。 為所有人帶來安全性。</p>
-        </div>
-        <div class="business-action">
-            <a href="https://www.microsoft.com/zh-tw/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness" >深入了解</a>
+    <div class="business-card" aria-label="商務用 Windows 11" draggable="true">
+        <div>
+            <picture>
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="一部執行 Windows 11 的筆記型電腦。">
+            </picture>            
+            <div class="card-content" draggable="true">
+                <span>&nbsp</span>
+                <h2>商務用 Windows 11</h2>
+                <p>專為混合式辦公而設計。 為員工帶來實用性。 為 IT 帶來一致性。 為所有人帶來安全性。</p>
+            </div>
+            <div class="business-action" draggable="true">
+                <a href="https://www.microsoft.com/zh-tw/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness"  draggable="true" aria-label="深入了解商務用 Windows 11">深入了解</a>
+            </div>
         </div>
     </div>
 </div>
 
 
+
+
 <!-- 關注 -->
-<div class="footer">
-    <div class="follow">
-        <h2>關注 Microsoft</h2>
-        <ul class="social-icons">
-            <li><i class="fa-brands fa-facebook-f"></i></li>
-            <li><i class="fa-brands fa-youtube"></i></li>
-        </ul>
+<div class="footer" aria-label="網站底部" draggable="true">
+    <div class="follow" aria-label="關注 Microsoft" draggable="true">
+        <h2>&nbsp&nbsp關注 Microsoft</h2>
+         <div class="social-icons" aria-label="社群媒體連結">
+            <div class="social-icon">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </div>
+            <div class="social-icon">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </div>
+
+         </div>
+            
+        
     </div>
 
     <!-- 統編 -->
-    <div class="company-info">
+    <div class="company-info" aria-label="公司資訊">
         <section>
             <span>台灣微軟股份有限公司統編 23525730</span>
         </section>
     </div>
 </div>
+<!-- 回首頁 -->
 
+<div class="footer-container" id="stopPoint"><!-- 停止點 -->
+    <a href="#" class="back-to-home" id="backToHome" aria-label="回到首頁">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>&nbsp回到首頁
+    </a>
+</div>
 
 
 <!-- footer  -->
        
-        <nav class="footer-nav">
+<nav class="footer-nav" aria-label="網站底部導航">
             <!-- 最新動向 -->
-            <div class="footer-column">
-                <h3>最新動向</h3>
-                <ul>
-                    <li><a href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro-11th-edition">Surface Pro</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-7th-edition">Surface Laptop</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-copilot">Microsoft Copilot</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-365">Microsoft 365</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-products-and-apps">探索 Microsoft 產品</a></li>
-                    <li><a href="https://www.microsoft.com/windows/windows-11-apps">Windows 11 應用程式</a></li>
-                </ul>
-            </div>
-        
+    <div class="footer-column" aria-label="最新動向">
+        <h3>最新動向</h3>
+        <ul>
+            <li><a href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro-11th-edition"  draggable="true" aria-label="Surface Pro">Surface Pro</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-7th-edition"  draggable="true" aria-label="Surface Laptop">Surface Laptop</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/microsoft-copilot" aria-label="Microsoft Copilot" draggable="true">Microsoft Copilot</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/microsoft-365" aria-label="Microsoft 365" draggable="true">Microsoft 365</a></li>
+            <li><a href="https://www.microsoft.com/zh-tw/microsoft-products-and-apps" aria-label="探索 Microsoft 產品" draggable="true">探索 Microsoft 產品</a></li>
+            <li><a href="https://www.microsoft.com/windows/windows-11-apps" aria-label="Windows 11 應用程式" draggable="true">Windows 11 應用程式</a></li>
+        </ul>
+    </div>
             <!-- Microsoft Store -->
-            <div class="footer-column">
+            <div class="footer-column" aria-label="Microsoft Store">
                 <h3>Microsoft Store</h3>
                 <ul>
-                    <li><a href="https://account.microsoft.com/">帳戶設定檔</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/download">下載中心</a></li>
-                    <li><a href="https://go.microsoft.com/fwlink/?linkid=2139749">Microsoft Store 支援</a></li>
-                    <li><a href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x404">退貨/退款</a></li>
-                    <li><a href="https://account.microsoft.com/orders">訂單追蹤</a></li>
+                    <li><a href="https://account.microsoft.com/" aria-label="帳戶設定檔" draggable="true">帳戶設定檔</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/download" aria-label="下載中心" draggable="true">下載中心</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/?linkid=2139749" aria-label="Microsoft Store 支援" draggable="true">Microsoft Store 支援</a></li>
+                    <li><a href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x404" aria-label="退貨/退款" draggable="true">退貨/退款</a></li>
+                    <li><a href="https://account.microsoft.com/orders" aria-label="訂單追蹤" draggable="true">訂單追蹤</a></li>
                 </ul>
             </div>
         
             <!-- 教育 -->
-            <div class="footer-column">
+            <div class="footer-column" aria-label="教育">
                 <h3>教育</h3>
                 <ul>
-                    <li><a href="https://www.microsoft.com/education">Microsoft 教育</a></li>
-                    <li><a href="https://www.microsoft.com/education/devices/overview">教育裝置</a></li>
-                    <li><a href="https://www.microsoft.com/education/products/teams">Microsoft Teams 教育版</a></li>
-                    <li><a href="https://www.microsoft.com/education/products/office">Microsoft 365 教育版</a></li>
-                    <li><a href="https://www.microsoft.com/education/products/office">Office 教育版</a></li>
-                    <li><a href="https://education.microsoft.com/">教育工作者訓練和發展</a></li>
-                    <li><a href="https://www.microsoft.com/en-us/store/b/education">學生和家長優惠</a></li>
-                    <li><a href="https://azure.microsoft.com/free/students/">Azure 學生版</a></li>
+                    <li><a href="https://www.microsoft.com/education" aria-label="Microsoft 教育" draggable="true">Microsoft 教育</a></li>
+                    <li><a href="https://www.microsoft.com/education/devices/overview" aria-label="教育裝置" draggable="true">教育裝置</a></li>
+                    <li><a href="https://www.microsoft.com/education/products/teams" aria-label="Microsoft Teams 教育版" draggable="true">Microsoft Teams 教育版</a></li>
+                    <li><a href="https://www.microsoft.com/education/products/office" aria-label="Microsoft 365 教育版" draggable="true">Microsoft 365 教育版</a></li>
+                    <li><a href="https://www.microsoft.com/education/products/office" aria-label="Office 教育版" draggable="true">Office 教育版</a></li>
+                    <li><a href="https://education.microsoft.com/" aria-label="教育工作者訓練和發展" draggable="true">教育工作者訓練和發展</a></li>
+                    <li><a href="https://www.microsoft.com/en-us/store/b/education" aria-label="學生和家長優惠" draggable="true">學生和家長優惠</a></li>
+                    <li><a href="https://azure.microsoft.com/free/students/" aria-label="Azure 學生版" draggable="true">Azure 學生版</a></li>
                 </ul>
             </div>
         
             <!-- 商務 -->
-            <div class="footer-column">
+            <div class="footer-column" aria-label="商務">
                 <h3>商務</h3>
                 <ul>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-cloud">Microsoft Cloud</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/security">Microsoft 安全性</a></li>
-                    <li><a href="https://azure.microsoft.com/">Azure</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/dynamics-365">Dynamics 365</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-365/business">Microsoft 365</a></li>
-                    <li><a href="https://about.ads.microsoft.com">Microsoft Advertising</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-365/copilot/copilot-for-work">Microsoft 365 Copilot</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software">Microsoft Teams</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-cloud" aria-label="Microsoft Cloud" draggable="true">Microsoft Cloud</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/security" aria-label="Microsoft 安全性" draggable="true">Microsoft 安全性</a></li>
+                    <li><a href="https://azure.microsoft.com/" aria-label="Azure" draggable="true">Azure</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/dynamics-365" aria-label="Dynamics 365" draggable="true">Dynamics 365</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-365/business" aria-label="Microsoft 365" draggable="true">Microsoft 365</a></li>
+                    <li><a href="https://about.ads.microsoft.com" aria-label="Microsoft Advertising" draggable="true">Microsoft Advertising</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-365/copilot/copilot-for-work" aria-label="Microsoft 365 Copilot" draggable="true">Microsoft 365 Copilot</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software" aria-label="Microsoft Teams" draggable="true">Microsoft Teams</a></li>
                 </ul>
             </div>
         
             <!-- 開發人員 -->
-            <div class="footer-column">
+            <div class="footer-column" aria-label="開發人員與 IT">
                 <h3>開發人員與 IT</h3>
                 <ul>
-                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-cloud">Microsoft 開發人員工具</a></li>
-                    <li><a href="https://learn.microsoft.com/docs/">文件</a></li>
-                    <li><a href="https://learn.microsoft.com/">Microsoft Learn</a></li>
-                    <li><a href="https://techcommunity.microsoft.com/">Microsoft 技術社群</a></li>
-                    <li><a href="https://azuremarketplace.microsoft.com/">Azure Marketplace</a></li>
-                    <li><a href="https://appsource.microsoft.com/">AppSource</a></li>
-                    <li><a href="https://www.microsoft.com/zh-tw/power-platform">Microsoft Power Platform</a></li>
-                    <li><a href="https://visualstudio.microsoft.com/">Visual Studio</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/microsoft-cloud" aria-label="Microsoft 開發人員工具" draggable="true">Microsoft 開發人員工具</a></li>
+                    <li><a href="https://learn.microsoft.com/docs/" aria-label="文件" draggable="true">文件</a></li>
+                    <li><a href="https://learn.microsoft.com/" aria-label="Microsoft Learn" draggable="true">Microsoft Learn</a></li>
+                    <li><a href="https://techcommunity.microsoft.com/" aria-label="Microsoft 技術社群" draggable="true">Microsoft 技術社群</a></li>
+                    <li><a href="https://azuremarketplace.microsoft.com/" aria-label="Azure Marketplace" draggable="true">Azure Marketplace</a></li>
+                    <li><a href="https://appsource.microsoft.com/" aria-label="AppSource" draggable="true">AppSource</a></li>
+                    <li><a href="https://www.microsoft.com/zh-tw/power-platform" aria-label="Microsoft Power Platform" draggable="true">Microsoft Power Platform</a></li>
+                    <li><a href="https://visualstudio.microsoft.com/" aria-label="Visual Studio" draggable="true">Visual Studio</a></li>
                 </ul>
             </div>
         
             <!-- 公司 -->
-            <div class="footer-column">
+            <div class="footer-column" aria-label="公司">
                 <h3>公司</h3>
                 <ul>
-                    <li><a href="https://careers.microsoft.com/">人才招募</a></li>
-                    <li><a href="https://news.microsoft.com/zh-tw">公司新聞</a></li>
-                    <li><a href="https://privacy.microsoft.com/zh-tw">Microsoft 隱私權</a></li>
-                    <li><a href="https://www.microsoft.com/investor/default.aspx">投資者</a></li>
-                    <li><a href="https://www.microsoft.com/sustainability/">永續性</a></li>
+                    <li><a href="https://careers.microsoft.com/" aria-label="人才招募" draggable="true">人才招募</a></li>
+                    <li><a href="https://news.microsoft.com/zh-tw" aria-label="公司新聞" draggable="true">公司新聞</a></li>
+                    <li><a href="https://privacy.microsoft.com/zh-tw" aria-label="Microsoft 隱私權" draggable="true">Microsoft 隱私權</a></li>
+                    <li><a href="https://www.microsoft.com/investor/default.aspx" aria-label="投資者" draggable="true">投資者</a></li>
+                    <li><a href="https://www.microsoft.com/sustainability/" aria-label="永續性" draggable="true">永續性</a></li>
                 </ul>
             </div>
         </nav>
         
 <!-- 最底下列 -->
-<div class="footer-bottom">
+<div class="footer-bottom" aria-label="網站底部資訊">
     <!-- 左側 -->
     <div class="footer-bottom-left">
-        <a href="#"><i class="fa-solid fa-earth-americas"></i> 中文(台灣)</a>
+        <a href="#" draggable="true"><i class="fa-solid fa-earth-americas"></i> 中文(台灣)</a>
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" style="">
+            <title>您的隱私權選擇退出圖示</title>
+            <path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule: evenodd; clip-rule: evenodd; fill: rgb(255, 255, 255);"></path>
+            <path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule: evenodd; clip-rule: evenodd; fill: rgb(0, 102, 255);"></path>
+            <path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill: rgb(255, 255, 255);"></path>
+            <path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill: rgb(0, 102, 255);"></path>
+        </svg>
         <span>您的隱私選擇</span>
         <span>消費者健康情況隱私權</span>
     </div>
 
+
     <!-- 右側 -->
-    <div class="footer-bottom-right">
-        <ul>
-            <li><a href="https://support.microsoft.com/contactus">連絡 Microsoft</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=521839">隱私權</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=206977">使用規定</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?linkid=2196228">商標</a></li>
-            <li><a href="https://choice.microsoft.com/">有關我們的廣告訊息</a></li>
-        </ul>
-        <span>© Microsoft 2025</span>
-    </div>
+<div class="footer-bottom-right">
+    <ul>
+        <li><a href="https://support.microsoft.com/contactus" aria-label="連絡 Microsoft" draggable="true">連絡 Microsoft</a></li>
+        <li><a href="https://go.microsoft.com/fwlink/?LinkId=521839" aria-label="隱私權" draggable="true">隱私權</a></li>
+        <li><a href="https://go.microsoft.com/fwlink/?LinkID=206977" aria-label="使用規定" draggable="true">使用規定</a></li>
+        <li><a href="https://go.microsoft.com/fwlink/?linkid=2196228" aria-label="商標" draggable="true">商標</a></li>
+        <li><a href="https://choice.microsoft.com/" aria-label="有關我們的廣告訊息" draggable="true">有關我們的廣告訊息</a></li>
+    </ul>
+    <span>© Microsoft 2025</span>
+</div>
 </div>
 
 
-<!-- 回首頁 -->
-<a href="/" class="back-to-home" id="backToHome"><i class="fa-solid fa-arrow-up"></i>回首頁</a>
-<script src="./app.js"></script>    
+
+<script src="./app.js"></script>
 </body>
 </html>
 
-<script src="./app.js"></script>    
-</body>
-</html>
+
 

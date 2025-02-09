@@ -1,12 +1,19 @@
 
-body {
+
+
+
+*{
     margin: 0;
     padding: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #262626;
-    background-color: #fff;
+    box-sizing: border-box;
+    
 }
-
+body {
+    max-width: 1600px; /* 限制內容最大寬度 */
+    width: 100%; /* 讓內容自適應 */
+    margin: 0 auto; /* 讓內容置中 */
+    overflow-x: hidden; /* 防止橫向滾動 */
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -26,37 +33,59 @@ button {
 
 /* 頭部樣式 */
 .main-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;  /* 左邊 LOGO, 中間導航列, 右邊按鈕 */
     align-items: center;
-    padding: 0 10%;
     height: 54px;
+    padding: 0 .75%;
     background-color: #fff;
-    z-index: -1;
-    
 }
 
 /* 左側 Logo 和導航列 */
 .main-header-left {
-    display: flex;
+   display: flex;
+    align-items: center;
+  
+    height: 54px;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+.main-header-left a{
+    height: 54px;
+    display: flex; 
+    justify-content: start;
     align-items: center;
 }
-
-.main-header-left img {
-    height: 24px;
-    margin-right: 15px;
+.main-header-img{
+    width: 137px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
-
+.main-header-left img {
+    height: 23px;
+    width: auto;
+    
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+}
 .main-nav ul {
     display: flex;
-    gap: 15px;
+    gap: 16px;
+    list-style: none;
+    
 }
 
 .main-nav ul li a {
-    font-size: 14px;
-    padding: 0 5px;
+    font-size: 13px;
+    padding: 16px 8px 10px;
     color: #000;
-    
+    text-decoration: none;
 }
 .main-nav ul li a:hover{
 
@@ -70,8 +99,9 @@ button {
 /* 右側功能區 */
 .main-header-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem; /* 增加間距 */
+    gap: 15px;
 }
 .main-header-right span:hover{
     border-bottom:2px #000 solid;
@@ -97,45 +127,128 @@ button {
     height: 24px;
 }
 .microsoft-menu {
-    padding: 0 0.5rem;
+    padding: 0 -5rem;
+}
+.fa-solid .fa-user-plus {
+    border-radius: 50%;
+    border: 1px solid #000;
+    width: 30px;
+    color: #fff;
 }
 
+/* --------- 1400px 以上（完整顯示） --------- */
+@media screen and (min-width: 1400px) {
+    .main-header-right button span {
+        display: inline; /* 顯示文字 */
+    }
+}
+
+/* --------- 860px ~ 1399px（只顯示 ICON） --------- */
+@media screen and (max-width: 1399px) {
+    .main-header-right button span {
+        display: none; /* 隱藏按鈕文字 */
+    }
+}
+
+/* --------- 859px 以下（重新排列佈局 + 確保 ICON 可見） --------- */
 @media screen and (max-width: 859px) {
-    
-    .main-header-left{
-        position: relative;
-        width: 100%;
+    .main-header {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* 左側 ICON + 中間 LOGO + 右側 ICON */
+        align-items: center;
+        padding: 0 1rem;
         height: 54px;
-        overflow: visible; 
+        background-color: #fff;
+        position: relative;
     }
+
+    /* **左側（漢堡選單 + 搜尋 ICON）** */
+    .menu-toggle {
+        position: absolute;
+    top: 0;
+    left: 15px;
+    height: 54px;
+    display: flex !important;
+    align-items: center;
+    z-index: 1000;
+       
+    }
+    .menu-icon {
+        font-size: 22px;
+        color: #000;
+        cursor: pointer;
+        display: flex !important; /* **確保顯示** */
+    }
+    
+    
+    .menu-icon, .search-btn i {
+        font-size: 22px;
+    }
+
+    /* **LOGO 置中** */
+    .main-header-left {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+    }
+
     .main-header-left img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 120px; /* LOGO 大小 */
+    }
+
+    /* **隱藏原本的主導航欄** */
+    .main-nav {
+        display: none;
+    }
+
+    /* **右側（購物車 + 登入 ICON）** */
+    .main-header-right {
+        display: flex !important;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-end;
         position: absolute;
-        top: 30%;
-        left: 30vw;
-        display: flex;  
-        object-fit:cover;   
-        z-index: 10;
+        right: 1rem;
+        top: 0;
+        height: 100%; 
+        
     }
-    .main-header-right{
-        visibility: hidden;
+
+    .cart-btn, .login-btn {
+        display: flex !important; /* **確保顯示購物車與登入 ICON** */
+        align-items: center;
+        width: auto !important; /* **防止寬度消失** */
+        flex: none;
+        z-index: 10 !important; /* **確保顯示** */
     }
-    .search i,.cart i,.login i{
-        visibility: visible;
+
+    .cart-btn i, .login-btn i {
+        font-size: 22px; /* ICON 大小 */
+        color: #000;
+        cursor: pointer;
+        display: flex !important; /* **確保顯示** */
+        width: auto !important;
+        
     }
-    .search i{
-        position: absolute;
-        top: 22px;
-        left: 54px;
+
+    /* **隱藏文字，只留 ICON** */
+    .main-header-right button span {
+        display: none;
     }
+
 }
 .main-header-right span{
     font-size: 13px;
 }
 
 .main-header-right .dropdown button,
-.main-header-right .search button,
-.main-header-right .cart button,
-.main-header-right .login button {
+.main-header-right .search-btn button,
+.main-header-right .cart-btn button,
+.main-header-right .login-btn button {
     flex: none;
     width: auto;
 }
@@ -151,12 +264,12 @@ button {
     color: #616161;
 }
 
-.main-header-right i {
-    font-size: 16px;
+.main-header-right .fa-solid {
+    font-size: 13px;
     margin-left: 5px;
    
 }
-.search i{
+.search-btn .fa-solid{
     transform: scaleX(-1);
 }
 
@@ -166,9 +279,9 @@ button {
     position: relative;
     justify-content: end;
     width: 100%;
-    
 }
 
+    
 
 .dropdown label{
     display: flex;
@@ -177,7 +290,9 @@ button {
     background-color: #fff;
     color: #000;
     position: relative;
-    margin: 11px;
+    top: 0.3rem;
+   right: 0.5em; ;
+    
 
 }
 
@@ -185,30 +300,31 @@ button {
     position: relative;
    
 }
-.dropdown label:hover,
-.dropdown:hover {
- background-color: #f2f2f2;
-}
+
 
 #side-menu-swich:checked ~ label,
 #side-menu-swich:checked ~ .dropdown {
- background-color: #f2f2f2;
+ background-color: #fff;
 }
 
 .sitemap-container {
     position: absolute;
     display: none; /* 改用 display 控制顯示 */
     top: 38px; /* 配合 header 高度 */
-    left: 50%;
+    left: 85%;
     transform: translateX(-75%); /* 水平置中 */
     width: 75vw;
-    max-width: 1200px;
+    max-width: 1230px;
     background-color: #f2f2f2;
-    padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 10;
-    
 }
+
+
+
+
+
+
 /* 當 checkbox 被選中時 */
 #side-menu-swich:checked ~ .sitemap-container {
     display: block;
@@ -231,13 +347,15 @@ button {
 .sitemap h3 {
     padding: 18px 0 18px 24px;
     font-size: 13px;
+    
 }
 
 .sitemap a {
     display: block;
-    padding: 12px 0 12px 24px;
+    padding: .75rem 0 1rem 24px;
     color: #000;
     font-size: 12px;
+    gap: 50REM;
 }
 
 .sitemap a:hover {
@@ -246,15 +364,21 @@ button {
 }
 
 .sitemap-footer {
-    text-align: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 19.5px;
+    background-color: rgb(230, 230, 230);
+    padding: .625REM;
+    justify-content: center;  
 }
 
 .sitemap-footer a {
     font-size: 1em;
-    color: #0078d4;
+    color: #000000CC;
     text-decoration: none;
 }
-.search,.cart,.login{
+.search-btn,.cart-btn,.login-btn{
     display: flex;
    flex: 1;
 }
@@ -271,11 +395,10 @@ button {
 .mobile-nav {
     position: absolute;
     top: 54px;
-    left: -110%;  /* 隱藏在左側 */
+    left: -10000%;  /* 隱藏在左側 */
     width: 100vw;
-    background-color: #f9f9f9f9;
+    background-color: #f2f2f2f2;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s ease-in-out;
     z-index: 999;
 }
 
@@ -309,11 +432,10 @@ button {
 
 /* 漢堡圖標設置 */
 .menu-icon {
-    font-size: 20px;
+    display: none;
+    font-size: 22px;
+    color: #000;
     cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 15px;
     z-index: 1000;
 }
 /* 初始狀態隱藏連結 */
@@ -397,14 +519,26 @@ button {
     display: block; /* 切换时显示 */
 }
 /* 當視窗寬度小於等於 859px 顯示 */
-@media screen and (max-width: 859px) {
+@media screen and (max-width: 859px) {   
     .menu-icon {
-        display: block;
+            display: block;
+            position: relative;
+            padding: 15px;
+     }
+     .menu-toggle {
+        display: flex !important;
     }
+     .search-btn{
+        display: flex !important;
+     }
+     .search-btn span{
+        display: none;
+     }
 
     .main-nav {
         display: none; /* 隱藏原本導航列 */
     }
+
 }
 
 /* 當視窗寬度大於 859px 時顯示原始導航列 */
@@ -421,162 +555,285 @@ button {
 
 
 /* 輪播區 */
-body {
-    overflow-x: hidden;
-  }
-  
-
-.carousel {
-    width: 100vw;
-    overflow: hidden;
-}
-.carousel-container {
-    width: 100%;
-    margin-bottom: 20px;
-  
-}
-
+/* 輪播控制區域樣式 */
 .carousel-controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
+    gap: 2rem;
+    z-index: 2;
+    position: relative;
+    height: auto;
+    padding: 12px 0 0 0;
+    background-color: #fff;
+}
 
-  .control-btn {
+/* 暫停/播放按鈕樣式 */
+.pause-play-btn {
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pause-play-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 上一張/下一張按鈕樣式 */
+.pre-btn {
     background: none;
     border: none;
     color: #000;
     font-size: 20px;
     cursor: pointer;
     padding: 0 10px;
-}
-  .carousel-prev,
-.carousel-next {
- background: none;
- border: none;
- color: #fff;
- font-size: 24px;
- cursor: pointer;
- z-index: 2;
-}
-
-.carousel-next {
- margin-left: 500px; /* 右邊按鈕向右偏移 */
-}
-
-.carousel-inner {
-    display: flex;
-    width: 100%;
     transition: transform 0.5s ease;
 }
-.carousel-item {
-    min-width: 100%;
-    flex-shrink: 0;
-    position: relative;
-}
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
 
+.pre-btn:hover {
+    transform: translateX(-10px);
 }
-.content-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-}
-.text-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    max-width: 450px;
-    opacity: 1;
-    z-index: 1;
-}
-.carousel-item.active .text-card {
-    opacity: 1;
-    transform: translateX(0);
-   }
 
-.text-card h2 {
-    font-size: 2.5rem;
-    margin: 0 0 20px 0;
-    font-weight: 600;
-}
-.text-card p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-.cta-button {
-    display: inline-block;
-    background-color: #0078d4;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: 600;
+.next-btn {
+    background: none;
     border: none;
+    color: #000;
+    font-size: 20px;
     cursor: pointer;
+    padding: 0 10px;
+    transition: transform 0.5s ease;
 }
-.controls-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    margin-top: 10px;
+
+.next-btn:hover {
+    transform: translateX(10px);
 }
+
+/* 導航點樣式 */
 .nav-dots {
     display: flex;
-    gap: 8px;
+    gap: 2rem;
 }
+
 .nav-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: #ccc;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
 .nav-dot.active {
     background-color: #000;
 }
-.pause-play-btn {
-    color: #000;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
+
+
+.carousel {
+    max-width: 1600px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-inner {
     display: flex;
-    align-items: center;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
-.control-btn {
-    background: none;
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 內容包裝器和文字卡片樣式 */
+.content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 152px;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 450px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+}
+.content-wrapper-alt {
+    position: absolute;
+    top: 3REM;
+    left: 1rem;
+    width: auto;
+    max-width: 666px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity s ease;
+    background: #fff
+}
+
+.carousel-item.active .content-wrapper,
+.carousel-item.active .content-wrapper-alt{
+    opacity: 1;
+}
+.text-card-rgba {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+.text-card-rgba h2 {
+    font-size: 37px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #000;
+}
+
+.text-card-rgba p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.text-card {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    width: 100%;
+   
+}
+
+.text-card h2 {
+    font-size: 37px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #000;
+}
+
+.text-card p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #0067b8;
+    color: white;
+    padding: 10px 20px;
+    line-height: 16px;
+    text-decoration: none;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    padding: 0 10px;
 }
-@media screen and (max-width: 768px) {
-    .text-card {
-        padding: 15px;
-        max-width: 90%;
+
+/* 添加懸停效果 */
+.cta-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+/* 文字卡片內的一般連結樣式 */
+.text-card a:not(.cta-button) {
+    color: #0067b8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text-card a:not(.cta-button):hover {
+    text-decoration: underline;
+}
+
+/* 確保連結在卡片中的正確間距 */
+.text-card a {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* 響應式調整 */
+@media screen and (max-width: 1083px) {
+    .content-wrapper,
+    .content-wrapper-alt {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 97%;
+        padding: 0;
+         margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    
-    .text-card h2 {
-        font-size: 1.5rem;
+
+    .text-card,
+    .text-card-rgba {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 3rem;
     }
-    
-    .text-card p {
-        font-size: 1rem;
+
+    .text-card h2,
+    .text-card-rgba h2 {
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 10px;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .text-card p,
+    .text-card-rgba p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .text-card .cta-button,
+    .text-card-rgba .cta-button {
+        display: block;
+        width: max-content;
+        margin: 10px 0;
     }
 }
+
+/* 針對不同解析度的變化 */
+@media screen and (max-width: 859px) {
+    .text-card,
+    .text-card-rgba {
+        background: #fff;
+    }
+}
+
+@media screen and (max-width: 573px) {
+    .text-card,
+    .text-card-rgba {
+        background: #fff;
+        max-width: 97%;
+    }
+}
+
 
 
 
@@ -585,17 +842,13 @@ body {
     display: flex;
     justify-content: center; /* 水平居中所有內容 */
     align-items: center; /* 垂直居中所有內容 */
-    margin: 20px 0;
     flex-wrap: 1 1 AUTO;
+    padding: 56px 0 0 0;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
-.icon-list ul {
-    display: flex;
-    list-style: none; /* 移除默認的列表樣式 */
-    gap: 30px; /* 列表項之間的間距 */
-    padding: 0;
-    margin: 0;
-}
+
 
 .icon-list li {
     display: flex;
@@ -603,6 +856,7 @@ body {
     align-items: center; /* 水平居中 */
     text-align: center; /* 文字居中對齊 */
     gap: 10px; /* 圖標和文字之間的間距 */
+    
 }
 
 /* 圖標樣式 */
@@ -614,22 +868,44 @@ body {
 
 /* 文字樣式 */
 .icon-list a {
-    font-size: 14px; /* 文字大小 */
-    color: #0078d4; /* 超連結顏色 */
+    font-size: 16px; /* 文字大小 */
+    color: #0067b8; /* 超連結顏色 */
+    text-decoration: underline; 
 }
+@media (max-width: 539px) {
+    .icon-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 第一行有兩列 */
+        grid-template-rows: auto auto; /* 兩行 */
+        text-align: center; /* 讓文字置中 */
+        padding: 40px 0 0 0;
+        list-style: none;
+        
+    }
 
+    .icon-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 讓圖標和文字置中 */
+    }
 
+    .icon-list .full-width {
+        grid-column: 1 / -1; /* 讓 "取得 Windows 11" 跨整列 */
+        justify-self: center; /* 讓它水平置中 */
+    }
+}
 
 /* -----------------------MS購買 */
 
 /* 容器樣式 */
 .product-container {
+    
+    gap: 24px;
     display: grid;
     gap: 24px;
-    padding: 24px;
+    padding: 5rem 0 6rem 0;
     margin: 0 auto;
     max-width: 1600px;
-
 }
 
 /* 卡片樣式 */
@@ -638,6 +914,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     overflow: hidden;
     height: 100%;
+    
 }
 .product-card > div {
     display: flex;
@@ -655,17 +932,21 @@ body {
 .product-content {
     padding: 20px;
     flex-grow: 1;
-    
+}
+.card-content{
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .product-content h2 {
     font-size: 24px;
     margin-bottom: 12px;
+    color: #000;
 }
 
 .product-content p {
     font-size: 16px;
-    color: #4c4c4c;
+    color: #000;
     
 }
 
@@ -676,7 +957,7 @@ body {
 
 .product-action a {
     display: inline-block;
-    background: #0078d4;
+    background: #0067b8;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -684,26 +965,51 @@ body {
     transition: background 0.3s;
 }
 .product-action a:hover {
-    background: #006cbd;
+    background: #0056b3;
+    text-decoration: none;
   }
 /* 響應式設計 */
-@media (max-width: 1082px) {
+/* 單欄 */
+@media (max-width: 539px) {
     .product-container {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        overflow: hidden; /* 避免超出螢幕 */
+        max-width: 100%;
+        margin: 0 auto;
+        padding-left: .75rem;
+        padding-right: .75rem;
+        width: calc(100% -1.5rem);
     }
-  }
-  
-  /* 電腦: 四欄 */
-  @media (min-width: 1083px) {
+
+}
+
+/* 雙欄 */
+@media (min-width: 540px) and (max-width: 1082.99px) {
     .product-container {
-      grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        margin: 0 auto;
+        padding-left: .75rem;
+        padding-right: .75rem;
+        width: calc(100% -1.5rem);
     }
-  }
-  
+}
+
+/* 四欄 */
+@media (min-width: 1083px) {
+    .product-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-left: 3.375rem;
+        padding-right: 3.375rem;
+        width: calc(100% -6.75rem);
+    }
+}
  
 
 
-/* ----------------------Copilot  */
+/* ----------------------card-foreground  */
 a {
     text-decoration: none;
     color: #fff;
@@ -713,193 +1019,221 @@ a:hover {
     text-decoration: underline;
 }
 
-.copilot-section {
+.card-foreground-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 20px; /* 控制文字卡片和圖片的間距 */
-    width: 90vw;
-    left: 5vw;
-    flex-direction: column;
-    background-color: #fff; /* 背景顏色 */
+    height: 100%; /* 讓 card-foreground 區域不會被撐開 */
+    overflow: hidden; /* 避免超出 */ 
     position: relative;
-    margin: 10% 0;
-    
+}
+.image-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 /* 文字卡片 */
-.copilot-item{
-    display: flex;
-    background-color: #000;
-    
-}
-.copilot-text {
+
+.card-foreground-text {
     position: absolute;
     display: flex;
     align-items: start;
     gap: 15px; /* 控制卡片內部元素的間距 */
     z-index: 1;
-    left: 100PX;
-    flex-wrap: wrap;
-    top: 50%;
-    bottom: auto;    
+    left: 4.8rem;
+    bottom: 11rem;    
     flex-direction: column;
+    width: 600px;
+    height: 248px;
+    padding: 3rem;
+}
+
+
+
+.card-foreground-text h2 {
+    font-size: 37px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #000;
+}
+
+.card-foreground-text p {
     
+        font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #000;
+        margin-bottom: 24px;
+        display: block;
+        cursor: pointer;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
     
-}
 
-
-
-.copilot-text h2 {
-    font-size: 2vw;
-    margin: 0;
-    color: #262626;
-}
-
-.copilot-text p {
-    font-size: 1.5vw;
-    margin: 0;
-    color: #555;
-}
 
 .download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0078d4;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-@media screen and (max-width: 859px) {
    
-    .copilot-section {
-        max-width: 1200px;
-        /* margin: 0 auto; */
-        margin-bottom: 30vh;
-        padding: 40px 20px 0 0;
-        background-color: #fff;
+    display: inline-block;
+    background-color: #0067b8;
+    color: white;
+    padding: 10px 20px;
+    line-height: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
     }
     
+
+/* ----------------------card-foreground  */
+@media screen and (max-width: 1083px) {
     .image-container {
-        margin-bottom: 30px;
-    }
-    
-    .image-container img {
         width: 100%;
-        max-width: 1083px;
-        height: auto;
-        border-radius: 8px;
+        max-width: 97%;
+        margin: 0 auto;
     }
-    
-    .copilot-text {
-        text-align: center;
-        /* background-color: #000; */
-        top: 400px;
-        left: 0;
+
+    .card-foreground-text {
+        position: static; 
+        transform: none;
+        width: 100%;
+        max-width: 97%;
+        padding: 3rem; /* 修正 -3rem 問題 */
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 讓內容靠左 */
     }
-    
-    .copilot-text h2 {
-        font-size: 32px;
-        margin-bottom: 16px;
-        color: #000;
+
+    .card-foreground-text h2 {
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 10px;
         font-weight: 600;
+        color: #000;
     }
-    
-    .copilot-text p {
-        font-size: 18px;
-        color: #666;
-        margin-bottom: 24px;
-        line-height: 1.5;
+
+    .card-foreground-text p {
+        font-size: 16px;
+        text-align: left;
+        line-height: 24px;
+        display: flex;
+        justify-content: center;
     }
-    
+
     .download-button {
         display: inline-block;
-        background-color: #0078d4;
+        background-color: #0067b8;
         color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
+        padding: 10px 20px;
         text-decoration: none;
-        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
         transition: background-color 0.3s;
+        margin-top: 1rem; /* 按鈕與段落的間距 */
     }
-    
+
     .download-button:hover {
-        background-color: #006cbd;
+        background-color: #0056b3;
+    }
+}
+
+/* 針對不同解析度的變化 */
+@media screen and (max-width: 859px) {
+    .card-foreground-text {
+        background: #fff; /* 讓背景與 `.text-card` 一致 */
+        /* padding: 2rem; */
+        max-width: 97%;
+        color: #000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 223px;
+        background-color: #fff;
+        margin: -3rem 0 0 0;
+        z-index: 20;
+    }
+   
+    .card-foreground-text p {
+        color: #000;
+    }
+}
+
+@media screen and (max-width: 573px) {
+    .card-foreground-text {
+        background: #fff; /* 讓背景與 `.text-card` 一致 */
+        /* padding: 2rem; */
+        max-width: 97%;
+        color: #000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 223px;
+        background-color: #fff;
+        margin: -3rem 0 0 0;
+        z-index: 20;
     }
     
-}
-/* 用於商務 */
-
-/* 圖片容器 */
-.image-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -50px;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-.copilot-text,
-    .image-container {
-        max-width: 100%;
-    }
-
-/* 響應式設計 */
-@media screen and (max-width: 859px) {
-    .copilot-section {
-        flex-direction: column-reverse; /* 先顯示圖片（在上），後顯示文字卡片 */
-        text-align: center; /* 文字居中對齊 */
-    }
-
-    .image-container,
-    .copilot-text {
-        max-width: 100%; /* 佔滿整個寬度 */
-    }
-
-    .copilot-text {
-        margin-top: 20px; /* 讓文字卡片與圖片之間保持距離 */
+    .card-foreground-text p {
+        color: #000;
     }
 }
-
 
 
 
 
 /* -----適用於商務 */
 
-.business {
+.business-h2 {
     font-size: 29px;
-    padding: 0px 16px 0px 16px;
     color: #000;
+    max-width: 1600px;
+    margin-top: 6rem;
+    padding-top: 3rem;
+    
 }
 
 /* 容器樣式 */
 
 .business-container {
     display: grid;
-  gap: 24px;
-  padding: 24px;
-  margin: 0 auto;
-  max-width: 1600px;
-
+    gap: 24px;
+    padding: 0 0 6rem 0;
+    margin: 0 auto;
+    max-width: 1600px;
 }
+
+
+
+
 
 /* 卡片樣式 */
 .business-card {
     background: #fff;
-    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     overflow: hidden;
     height: 100%;
+    max-width: 1600px;
+}
+
+.business-card > div {
     display: flex;
     flex-direction: column;
-
-}
+    height: 100%;
+  }
 
 /* 圖片樣式 */
 .business-card img {
@@ -909,114 +1243,209 @@ a:hover {
 }
 
 /* 卡片內容 */
-.card-content {
+.business-card-content {
     padding: 20px;
     flex-grow: 1;
+     /* 避免内容被裁剪 */
 }
 
-.card-content h2 {
+.business-card-content h2 {
     font-size: 24px;
   margin-bottom: 12px;
 }
 
-.card-content p {
+.business-card-content p {
     font-size: 16px;
-    line-height: 1.5;
     color: #4c4c4c;
 }
-
+/* 按鈕樣式 */
 .business-action {
     padding: 0 20px 20px;
 }
+
 .business-action a {
-    display: inline-block;
-  background: #0078d4;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s;
+   display: inline-block;
+    background: #0067b8;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 .business-action a:hover {
-    background: #006cbd;
+    background: #0056b3;
   }
+
+  .business-action-next {
+    display: inline-flex; /* 讓內部內容水平排列 */
+    align-items: center;
+    background: transparent !important;
+    color: #0067b8 !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out; /* 只讓文字變色，不平移 */
+    margin-left: -10px;
+}
+
+/* 無框按鈕 */
+.business-action-next:hover {
+    text-decoration: underline !important;
+    color: #006cbd !important;
+}
+.business-action-next button {
+    color: #0067b8;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+.business-action-next:hover button {
+    transform: translateX(10px); 
+}
+.business-action-next button:hover {
+    text-decoration: none !important;
+}
+.card-new{
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+	text-align: left;
+	background-color: rgb(255, 185, 0);
+	color: rgb(0, 0, 0);
+	height: 28px;
+	width: 72px;
+	padding: 6px 12px;
+	display: inline-block;
+	box-sizing: border-box;
+	border: none;
+	overflow: visible;
+	visibility: visible;
+}
 
 /* 響應式設計 */
 
-  @media (max-width: 1082px) {
+/* 單欄 */
+@media (max-width: 539px) {
     .business-container {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        overflow: hidden; /* 避免超出螢幕 */
+        max-width: 100%;
+        margin: 0 auto;
+        padding-left: .75rem;
+        padding-right: .75rem;
+        width: calc(100% -1.5rem);
     }
-  }
-  
-  /* 電腦: 四欄 */
-  @media (min-width: 1083px) {
+}
+
+/* 雙欄 */
+@media (min-width: 540px) and (max-width: 1082.99px) {
     .business-container {
-      grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        margin: 0 auto;
+        padding-left: .75rem;
+        padding-right: .75rem;
+        width: calc(100% -1.5rem);
     }
-  }
+}
+
+/* 四欄 */
+@media (min-width: 1083px) {
+    .business-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-left: 3.375rem;
+        padding-right: 3.375rem;
+        width: calc(100% -6.75rem);
+    }
+}
+
 /* ----------------關注 */
 
 /* Footer 區域 */
 .footer {
-    padding: 20px;
-    background-color: #fff; 
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* 關注區域 */
 
 
 .follow {
-    display: flex;
-    margin-bottom: 20px; /* 與統編區域的間距 */
-    padding: 10PX;
-    width: 100%
+    display: flex; 
+    width: 100%; 
+    align-items: center;
+    gap: 12px; 
 }
 
 .follow h2 {
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 0 10px 0; /* 下方間距，靠左對齊 */
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0; /* 避免 h2 有額外的 margin 影響對齊 */
+    display: flex;
+    align-items: center; /* 確保 h2 內文字能和 icon 對齊 */
+    
 }
 
 .social-icons {
     display: flex;
-    gap: 10px; /* 控制圖標之間的間距 */
-    list-style: none;
-    padding: 0 0 10PX 0;
-    margin: 10px;
-    
+    gap: 16px; /* 控制 icon 之間的距離 */
+    padding: 0;
+    margin: 0;
+    align-items: center;   
+}
+.social-icons .fa-brands {
+    font-size: 24px; /* 圖標大小 */
+    color: #262626;
+    display: inline-block;
+    align-items: center;
+
 }
 
 .social-icons li {
-    font-size: 20px; /* 圖標大小 */
+    font-size: 32px; /* 圖標大小 */
     color: #262626;
     display: inline-block;
+    align-items: center;
 }
 
 /* 統編區域 */
 .company-info {
-    margin-top: 10px;
+    padding: 3rem 0 1rem 0; 
 }
 
 .company-info span {
-    font-size: 14px;
+    font-size: 16px;
     color: #000; /* 與標題保持一致的顏色 */
     display: block; /* 獨占一行 */
+   
 }
 
 
 /* ------------底層瀏覽列 */
 
 /* Footer 區域 */
+
 .footer-nav {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 預設 6 欄 */
-    gap: 20px; /* 欄間距 */
-    padding: 20px;
-    background-color: #f9f9f9; /* 背景顏色 */
-}
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1600px;
+    background-color: #f2f2f2f2;
+    padding: 3rem 0 0 0;
+    
+    
 
+}
+.footer-column{
+    width: 100%;
+}
 .footer-column h3 {
     font-size: 15px;
     font-weight: bold;
@@ -1026,34 +1455,32 @@ a:hover {
 
 .footer-column ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: .5rem;
 }
 
-.footer-column ul li {
-    margin-bottom: 8px;
-}
+
 
 .footer-column ul li a {
     text-decoration: none;
     color: #616161;
     font-size: 11px;
+    line-height: 2rem;
 }
 
 .footer-column ul li a:hover {
     text-decoration: underline;
+    color: rgba(0, 0, 0, 0.9);
 }
 
 /* 響應式設計 */
 @media screen and (max-width: 1024px) {
     .footer-nav {
-        grid-template-columns: repeat(3, 1fr); /* 中等螢幕 3 欄 */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-
 @media screen and (max-width: 539px) {
     .footer-nav {
-        grid-template-columns: 1fr; /* 小螢幕 1 欄 */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1064,12 +1491,12 @@ a:hover {
     display: flex;
     justify-content: space-between; /* 左右對齊 */
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f9f9f9; /* 背景顏色 */
-    border-top: 1px solid #e6e6e6; /* 上邊框 */
-    font-size: 14px;
+    background-color: #f2f2f2f2; /* 背景顏色 */
+    font-size: 11px;
     color: #616161;
-    flex-wrap: wrap; /* 支援響應式換行 */
+    flex-wrap: nowrap; /* 支援響應式換行 */
+    padding: 2rem 0;
+   
 }
 
 /* 左側樣式 */
@@ -1078,12 +1505,16 @@ a:hover {
     gap: 15px; /* 控制項目之間的間距 */
     flex-wrap: wrap; /* 讓項目換行 */
     margin-bottom: 10px;
+    background-color: #f2f2f2f2;
+}
+.footer-column{
+    color: #616161;
 }
 
 .footer-bottom-left a {
     text-decoration: none;
-    color: #0078d4;
-    font-size: 14px;
+    color: #616161;
+    font-size: 15px;
 }
 
 .footer-bottom-left a:hover {
@@ -1093,21 +1524,32 @@ a:hover {
 /* 右側樣式 */
 .footer-bottom-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* 靠右對齊 */
-    gap: 10px;
+    align-items: center; /* 確保內容垂直居中 */
+    justify-content: flex-end; /* 靠右對齊 */
+    width: 50%; 
+    flex-wrap: nowrap; /* 防止換行 */
+    gap: 27px; /* 控制間距 */
+    color: #616161;
+    min-width: 0; /* 防止 flex-box 壓縮 */
+    flex-shrink: 0; /* 禁止縮小 */
+}
+.footer-bottom-right span{
+    white-space: nowrap; /* 防止內容換行 */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-end; /* 靠右對齊 */
 }
 
 .footer-bottom-right ul {
     display: flex;
-    gap: 15px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    flex-wrap: nowrap; /* 防止換行 */
+    gap: 27px; /* 適度調整間距 */
+    white-space: nowrap; /* 確保文本不折行 */
 }
 
 .footer-bottom-right ul li {
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .footer-bottom-right ul li a {
@@ -1120,11 +1562,11 @@ a:hover {
 }
 
 .footer-bottom-right span {
-    color: #000;
+    color: #616161;
 }
 
 /* 響應式設計 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1083px) {
     .footer-bottom {
         flex-direction: column; /* 改為垂直排列 */
         align-items: flex-start; /* 靠左對齊 */
@@ -1132,30 +1574,104 @@ a:hover {
 
     .footer-bottom-left {
         order: 1; /* 左側內容放在上面 */
+        flex-direction: column;
     }
 
     .footer-bottom-right {
-        align-items: flex-start; /* 靠左對齊 */
-        order: 2; /* 右側內容放在下面 */
+        order: 2;
+        display: flex;
+    justify-content: flex-end; /* 讓內部內容靠右 */
+    margin-left: 8%; /* 讓它推向右側 */
+    flex-wrap: nowrap;
+    width: auto;
+    
+    }    
+}
+@media screen and (max-width: 767px){
+    .footer-bottom-right {
+        gap: 10px; /* 減少間距，避免擠壓 */
+        justify-content: flex-start; /* 讓內容靠左對齊 */
+        align-items: center; /* 保持垂直居中 */
+        width: 100%;
+        position: relative; /* 確保定位有效 */
+        left: 0; /* 讓它貼齊左邊 */
+        padding-left: 0; /* 確保沒有內邊距 */
+        margin-left: 0; /* 確保沒有外邊距 */
+    }
+    .footer-bottom-right ul{
+        gap: 10px; /* 減少間距，讓內容更緊湊 */
+        justify-content: flex-start; /* 讓列表靠左對齊 */
     }
 }
 
 /* 回首頁 */
-
+.footer-container{
+    margin: 0 -3.5%;
+    padding-bottom: 3rem 0 3rem 0;
+}
 .back-to-home {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
-    padding: 10px 15px;
-    background-color: #272727;
-    color: #fff;
+    background-color: #D1D1D1;
+    color: #000;
+    padding: 0 15px;
     text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
+    font-size: 16px;
+    display: none; /* 初始狀態為隱藏 */
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 1000;
+    line-height: 16PX;
+    font-weight: 700;
+    width: 124px;
+    height: 40px;
+    
+    
+    
+}
 
-  .back-to-home.stop {
+/* 顯示按鈕時的樣式 */
+.back-to-home.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+.back-to-home:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+/* 停駐在底部時的樣式 */
+.back-to-home.stop {
     position: absolute;
-  }
+    bottom: 5rem;
+    right: 0.5rem;
+    margin: 0 -5%;
+}
+
+/* 容器相對定位 */
+.footer-container {
+    position: relative;
+    min-height: 100px;
+    padding-bottom: 60px; /* 為按鈕預留空間 */
+}
+.back-to-home, .back-to-home:visited,
+ .back-to-home:hover, .back-to-home:focus, .back-to-home:active {
+    text-decoration: none !important;
+}
+
+.container, .main-header, .carousel, .product-container, .footer {
+    max-width: 1600px; /* 限制最大寬度 */
+    width: 100%; /* 讓內容在小螢幕時自適應 */
+    margin: 0 auto; /* 讓內容置中 */
+}
+@media screen and (max-width: 1600px) {
+    body, .container, .carousel, .product-container, .footer {
+        max-width: 100%; /* 確保內容不超過螢幕 */
+        width: 100%;
+    }
+}
