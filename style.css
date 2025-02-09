@@ -171,7 +171,7 @@ button {
     .menu-toggle {
         position: absolute;
     top: 0;
-    left: 15px;
+    left: 0px;
     height: 54px;
     display: flex !important;
     align-items: center;
@@ -315,14 +315,15 @@ button {
 .sitemap-container {
     position: absolute;
     display: none; /* 改用 display 控制顯示 */
-    top: 38px; /* 配合 header 高度 */
+    top: 38px; 
     left: 85%;
     transform: translateX(-75%); /* 水平置中 */
     width: 75vw;
-    max-width: 1230px;
+    max-width: 1200px;
     background-color: #f2f2f2;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 10;
+    
 }
 
 
