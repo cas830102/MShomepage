@@ -28,7 +28,34 @@
 
 
 </head>
+
 <body>
+    <div id="screen-flip">
+    <div class="search-container">
+        <form class="search-form">
+            <!-- Microsoft Logo -->
+            <div class="search-logo">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft">
+            </div>
+    
+            <!-- 搜尋框和放大鏡 -->
+            <div class="search-box">
+                <input type="text" placeholder="搜尋 Microsoft.com" aria-label="搜尋 Microsoft.com">
+                
+                <button type="submit" class="search-btn" aria-label="執行搜尋">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+    
+            <!-- 取消按鈕（獨立） -->
+            <button type="button" class="close-btn">取消</button>
+        </form>
+    </div>
+    <div class="search-overlay"></div>
+    
+    
+
+
     <div class="site-description" hidden>
         <p>這是一個專門介紹 Microsoft 產品的網站，涵蓋 Windows、Surface、Azure 雲端等最新技術與資訊。</p>
     </div>
@@ -41,7 +68,6 @@
         <div class="main-header-img"  draggable="true">
             <a href="https://www.microsoft.com" aria-label="Microsoft Homepage">
                 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft"  draggable="true">
-                <span itemprop="name" role="presentation" aria-hidden="true">Microsoft</span>
             </a>
         </div>
         <!-- 導覽列 -->
@@ -50,9 +76,22 @@
             <li><a href="https://www.microsoft.com/zh-tw/microsoft-365" aria-label="前往 Microsoft 365 產品頁面" draggable="true">Microsoft 365</a></li>
             <li><a href="https://www.microsoft.com/zh-tw/microsoft-teams/group-chat-software" aria-label="前往 Microsoft Teams 產品頁面" draggable="true">Teams</a></li>
             <li><a href="https://www.microsoft.com/zh-tw/windows/" aria-label="前往 Windows 產品頁面" draggable="true">Windows</a></li>
-            <li><a href="https://www.microsoft.com/surface" aria-label="前往 Surface 產品頁面" draggable="true">Surface</a></li>
-            <li><a href="https://www.xbox.com/" aria-label="前往 Xbox 產品頁面" draggable="true">Xbox</a></li>
-            <li><a href="https://support.microsoft.com/zh-tw" aria-label="前往 支援頁面" draggable="true">支援</a></li>
+            <!-- 添加 hide-on-medium 類別到要隱藏的項目 -->
+            <li class="hide-on-medium"><a href="https://www.microsoft.com/surface" aria-label="前往 Surface 產品頁面" draggable="true">Surface</a></li>
+            <li class="hide-on-medium"><a href="https://www.xbox.com/" aria-label="前往 Xbox 產品頁面" draggable="true">Xbox</a></li>
+            <li class="hide-on-medium"><a href="https://support.microsoft.com/zh-tw" aria-label="前往 支援頁面" draggable="true">支援</a></li>
+             <!-- 添加更多選項的下拉選單 -->
+            <li class="more-menu">
+                <a href="#" aria-label="更多選項" draggable="true">
+                    更多
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <div class="more-dropdown">
+                    <a href="https://www.microsoft.com/surface" aria-label="前往 Surface 產品頁面">Surface</a>
+                    <a href="https://www.xbox.com/" aria-label="前往 Xbox 產品頁面">Xbox</a>
+                    <a href="https://support.microsoft.com/zh-tw" aria-label="前往 支援頁面">支援</a>
+                </div>
+            </li>
         </ul>
     </nav>
 </div>
@@ -162,7 +201,7 @@
 <div class="menu-toggle">
     <!-- 三橫線按鈕 -->
     <input type="checkbox" id="menu-toggle-checkbox" hidden aria-hidden="true">
-<label for="menu-toggle-checkbox" class="menu-icon" aria-label="展開或摺疊主選單">
+<label for="menu-toggle-checkbox" class="menu-icon" tabindex="0" aria-label="展開或摺疊主選單">
     <div class="menu-overlay"></div><i class="fa-solid fa-bars" aria-hidden="true"></i>
 </label>
     <!-- 搜尋 -->
@@ -484,44 +523,47 @@
     <div class="business-card" aria-label="Microsoft Teams" draggable="true">
         <div>
             <picture>
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
-                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-Teams-Commercial-Meeting?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Microsoft Teams 視訊通話。">
-            </picture>            
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="">
+            </picture>           
             <div class="card-content" draggable="true">
                 <span>&nbsp</span>
-                <h2>為您的企業取得 Microsoft Teams</h2>
-                <p>線上會議、聊天、即時共同作業以及共用雲端儲存空間：所有的一切，盡在此處。</p>
+                <h2>加入 AI 時代</h2>
+                <p>以 Microsoft 最新 AI 解決方案創作、溝通和編碼。</p>
             </div>
             <div class="business-action" draggable="true">
-                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/small-medium-business?icid=mscom_marcom_CPW3a_TeamsForBusiness"  draggable="true" aria-label="為您的企業尋找合適的 Microsoft Teams 計畫">為您的企業尋找合適的計畫</a>
+                <a href="https://www.microsoft.com/zh-tw/microsoft-teams/small-medium-business?icid=mscom_marcom_CPW3a_TeamsForBusiness"  draggable="true" aria-label="為您的企業尋找合適的 Microsoft Teams 計畫">探索 AI 解決方案</a>
             </div>
         </div>    
     </div>
-
+    
+    
+    
     <!-- Windows 11 -->
     <div class="business-card" aria-label="商務用 Windows 11" draggable="true">
         <div>
             <picture>
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
-                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
-                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="一部執行 Windows 11 的筆記型電腦。">
-            </picture>            
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=380&amp;hei=213&amp;fit=crop" media="(min-width: 1400px)">
+                <source srcset=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=297&amp;hei=167&amp;fit=crop" media="(min-width: 1084px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=517&amp;hei=293&amp;fit=crop" media="(min-width: 860px)">
+                <source srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=406&amp;hei=230&amp;fit=crop" media="(min-width: 540px)">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="Visual Studio 圖示。">
+            </picture>          
             <div class="card-content" draggable="true">
                 <span>&nbsp</span>
-                <h2>商務用 Windows 11</h2>
-                <p>專為混合式辦公而設計。 為員工帶來實用性。 為 IT 帶來一致性。 為所有人帶來安全性。</p>
+                <h2>Visual Studio 2022</h2>
+                <p>取得最全面的 IDE，讓 .NET 和 C++ 開發人員在 Windows 上建置 Web、雲端、電腦、行動應用程式、服務和遊戲。</p>
             </div>
             <div class="business-action" draggable="true">
-                <a href="https://www.microsoft.com/zh-tw/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness"  draggable="true" aria-label="深入了解商務用 Windows 11">深入了解</a>
+                <a href="https://www.microsoft.com/zh-tw/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness"  draggable="true" aria-label="深入了解商務用 Windows 11">下載 Visual Studio 2022</a>
             </div>
         </div>
     </div>
 </div>
+
 
 
 
@@ -554,7 +596,7 @@
 
 <div class="footer-container" id="stopPoint"><!-- 停止點 -->
     <a href="#" class="back-to-home" id="backToHome" aria-label="回到首頁">
-        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>&nbsp回到首頁
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>&nbsp&nbsp回到首頁
     </a>
 </div>
 
@@ -679,8 +721,6 @@
 
 
 <script src="./app.js"></script>
+</div>
 </body>
 </html>
-
-
-

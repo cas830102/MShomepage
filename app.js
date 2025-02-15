@@ -1,3 +1,26 @@
+console.log("✅ JavaScript 成功載入！");
+
+// 螢幕顯示方向判斷
+
+function checkOrientation() {
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        console.log("目前是直向模式");
+        // document.body.style.backgroundColor = "lightblue";
+    } else {
+        console.log("目前是橫向模式");
+        // document.body.style.backgroundColor = "lightcoral";
+    }
+}
+
+// 監聽方向變化事件
+window.addEventListener("orientationchange", checkOrientation);
+window.addEventListener("resize", checkOrientation);
+
+// 初次載入時檢查方向
+checkOrientation();
+
+
+// 圖片輪播功能
 document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-item');
@@ -193,52 +216,109 @@ document.querySelector('.menu-overlay').addEventListener('click', function() {
 
 
 
+// 回首頁
 
-// 回首頁按鈕
 
+// 回到首頁功能
 document.addEventListener("DOMContentLoaded", function() {
     const backToHome = document.getElementById("backToHome");
-    const stopPoint = document.getElementById("stopPoint");
-    let isFixed = true;
+    const stopPoint = document.getElementById("stopPoint"); // footer 的容器
+    let isFixed = true;  // 是否固定在右下角
 
-    // 監聽滾動事件
-    window.addEventListener("scroll", function() {
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollPercentage = scrollPosition / (documentHeight - windowHeight);
-        const stopPointRect = stopPoint.getBoundingClientRect();
-        const stopPointTop = stopPointRect.top + window.scrollY;
+    function updateButtonPosition() {
+        const scrollPosition = window.scrollY;  // 目前滾動的距離
+        const windowHeight = window.innerHeight;  // 當前視窗高度
+        const documentHeight = document.documentElement.scrollHeight;  // 整個頁面的總高度
+        const scrollPercentage = scrollPosition / (documentHeight - windowHeight);  // 滾動的百分比
 
-        // 當滾動超過 25% 時顯示按鈕
-        if (scrollPercentage > 0.25) {
+        const stopPointRect = stopPoint.getBoundingClientRect();  // 取得 stopPoint（footer）的位置
+        const stopPointTop = stopPointRect.top + window.scrollY;  // stopPoint 的頂部相對於頁面的高度
+        const stopPointBottom = stopPoint.offsetTop + stopPoint.offsetHeight;  // stopPoint 的底部
+
+        // 顯示/隱藏按鈕
+        if (scrollPercentage > 0.24) {
             backToHome.classList.add("show");
         } else {
             backToHome.classList.remove("show");
         }
 
-        // 判斷是否到達停駐點
-        if (window.scrollY + windowHeight >= stopPointTop) {
+        // 當按鈕滾動到 stopPoint 內部時，讓它停駐
+        if (scrollPosition + windowHeight >= stopPointTop) {
             if (isFixed) {
                 backToHome.classList.add("stop");
-                stopPoint.appendChild(backToHome);
+                stopPoint.appendChild(backToHome);  // 把按鈕移到 stopPoint 內
                 isFixed = false;
+            }
+        } else if (scrollPosition + windowHeight >= stopPointBottom) {  
+            // **如果滾動超過 footer 的底部，按鈕仍然停駐**
+            if (!isFixed) {
+                stopPoint.appendChild(backToHome);
+                backToHome.classList.add("stop");
             }
         } else {
             if (!isFixed) {
                 backToHome.classList.remove("stop");
-                document.body.appendChild(backToHome);
+                document.body.appendChild(backToHome);  // 按鈕回到原本右下角
                 isFixed = true;
             }
         }
-    });
+    }
+
+    // 監聽滾動事件
+    window.addEventListener("scroll", updateButtonPosition);
+    // 監聽視窗大小改變
+    window.addEventListener("resize", updateButtonPosition);
 
     // 點擊回到頂部
     backToHome.addEventListener("click", function(e) {
         e.preventDefault();
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: "instant"
         });
+    });
+
+    // 初始化按鈕位置
+    updateButtonPosition();
+});
+
+
+
+
+// 搜尋欄功能
+
+document.addEventListener('DOMContentLoaded', function() {
+    const headerSearchBtn = document.querySelector('.main-header-right .search-btn button');
+    const searchContainer = document.querySelector('.search-container');
+    const searchOverlay = document.querySelector('.search-overlay');
+    const closeBtn = document.querySelector('.search-form .close-btn');
+    const searchInput = document.querySelector('.search-form input');
+
+    // 打開搜尋欄
+    function openSearch() {
+        searchContainer.classList.add('active');
+        searchOverlay.classList.add('active');
+        searchInput.focus();
+        document.body.style.overflow = 'hidden';
+    }
+
+    // 關閉搜尋欄
+    function closeSearch() {
+        searchContainer.classList.remove('active');
+        searchOverlay.classList.remove('active');
+        searchInput.value = '';
+        document.body.style.overflow = '';
+    }
+
+    // 監聽事件
+    headerSearchBtn.addEventListener('click', openSearch);
+    closeBtn.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', closeSearch);
+
+    // ESC 鍵關閉搜尋欄
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchContainer.classList.contains('active')) {
+            closeSearch();
+        }
     });
 });
